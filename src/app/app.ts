@@ -4,10 +4,10 @@ import {Component} from '@angular/core';
   selector: 'app-root',
   imports: [],
   template: `
-    <h1>Default</h1>
+    <h1>Habbit</h1>
   `,
   styleUrls: ['./app.css'],
 })
 export class App {
-  title = 'default';
+  title = 'habbit';
 }
