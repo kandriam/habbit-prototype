@@ -1,10 +1,18 @@
 .habit-display {
-  background: var(--accent-color);
+  background: var(--g3-color);
   border-radius: 30px;
   padding: 10px;
+  transition: background-color 0.5s;
+  transition: box-shadow 0.5s;
 }
+
+.habit-display:hover {
+    background-color: var(--g2-color);
+    box-shadow: 0px 5px 15px var(--g3-color);
+}
+
 .habit-display-heading {
-  color: var(--primary-color);
+  color: var(--g5-color);
   padding: 10px 20px 0 20px;
   padding-bottom: 15px;
 }
@@ -15,9 +23,18 @@
 .habit-display-tags {
   padding: 5px 5px 5px 5px;
   margin: 5px;
+
   border: 1px solid;
   border-radius: 30px;
 
+  background-color: var(--g2-color);
+  transition: background-color 0.5s;
+  transition: box-shadow 0.5s;
+}
+
+.habit-display-tags:hover {
+    background-color: var(--g1-color);
+    box-shadow: 0px 5px 5px var(--g3-color);
 }
 
 section.habit-display a {
