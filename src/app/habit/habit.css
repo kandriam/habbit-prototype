@@ -1,0 +1,19 @@
+.habit-display {
+  background: var(--accent-color);
+  border-radius: 30px;
+  padding-bottom: 30px;
+}
+.habit-display-heading {
+  color: var(--primary-color);
+  padding: 10px 20px 0 20px;
+}
+
+.habit-display-tags {
+  padding: 10px 20px 20px 20px;
+}
+
+section.habit-display a {
+  padding-left: 20px;
+  text-decoration: none;
+  color: var(--primary-color);
+}

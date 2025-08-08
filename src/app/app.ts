@@ -7,7 +7,7 @@ import {Home} from './home/home';
   template: `
     <main>
       <header class="brand-name">
-        <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true" />
+        <h1>Habbit</h1>
       </header>
       <section class="content">
         <app-home></app-home>
