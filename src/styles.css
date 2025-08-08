@@ -15,10 +15,40 @@ body {
   --g1-color: #e4eb9c;
 }
 
+h1, h2 {
+  color: var(--g5-color);
+  text-decoration: none;
+  margin: 5px;
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+h2 {
+    font-size: x-large;
+}
+
+a {
+  text-decoration: underline var(--g3-color);
+}
+
 button.primary {
+  border: solid 1px var(--g5-color);
+  border-radius: 10px;
   padding: 10px;
-  border: solid 1px var(--primary-color);
-  background: var(--primary-color);
-  color: white;
-  border-radius: 8px;
+  margin: 5px;
+
+  text-decoration: none;
+  color: var(--g5-color);
+  
+  background-color: var(--g2-color);
+
+  transition: background-color 0.5s;
+  transition: box-shadow 0.5s;
+}
+
+button.primary:active {
+    background-color: var(--g3-color);
+    box-shadow: 0px 5px 5px var(--g4-color);
 }

@@ -12,19 +12,19 @@ export class HabitService {
       id: 1,
       name: 'Drink water',
       tags: ['Health', 'Hydration'],
-      timesperday: 1,
+      timesperinstance: 1,
     },
     {
       id: 2,
       name: 'Brush teeth',
       tags: ['Hygene'],
-      timesperday: 2,
+      timesperinstance: 2,
     },
     {
       id: 3,
       name: 'Salt gargle',
       tags: ['Hygene'],
-      timesperday: 1,
+      timesperinstance: 1,
     },
   ];
 

@@ -7,18 +7,31 @@ import {HabitInfo} from '../habit';
   selector: 'app-habitdetails',
   imports: [],
   template: `
-    <h1>{{habit?.name}}</h1>
-    <p>
-      {{ habitId }}
-    </p>
+    <article class="habit-details">
+      <h1>{{habit?.name}}</h1>
+      <section class="habit-details-section">
+        {{ habit?.timesperinstance }} time per day
+      </section>
+      <section class="habit-details-section">
+        @for (tag of habit?.tags; track $index) {
+          <a class="habit-tags" href="#">{{ tag }}</a>
+        }
+      </section>
+      
+    </article>
   `,
-  styles: ``
+  styleUrls: [ '../../styles.css', './habitdetails.css'],
 })
 
 export class Details {
-   route: ActivatedRoute = inject(ActivatedRoute);
-   habitId = -1;
-   constructor() {
-     this.habitId = Number(this.route.snapshot.params['id']);
-   }
+  route: ActivatedRoute = inject(ActivatedRoute);
+  habitService: HabitService = inject(HabitService);
+  habit: HabitInfo | undefined;
+  // habitId = -1;
+
+
+  constructor() {
+    const habitId = Number(this.route.snapshot.params['id']);
+    this.habit = this.habitService.getHabitsById(habitId);
+  }
  }

@@ -8,14 +8,14 @@ import {RouterModule} from '@angular/router';
   template: `
     <main>
       <header class="brand-name">
-        <h1>Habbit</h1>
+        <a [routerLink]="['/']"><h1>Habbit</h1></a>
       </header>
       <section class="content">
         <router-outlet></router-outlet>
       </section>
     </main>
   `,
-  styleUrls: ['./app.css'],
+  styleUrls: ['../styles.css', './app.css'],
 })
 export class App {
   title = 'habbit';

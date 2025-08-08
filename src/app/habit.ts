@@ -2,7 +2,7 @@ export interface HabitInfo {
     id: number;
     name: string;
     tags: string[];
-    timesperday: number;
+    timesperinstance: number;
     startdate?: Date;
     enddate?: Date;
 }

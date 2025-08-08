@@ -8,7 +8,7 @@ import { HabitService } from '../habit.service';
   imports: [Habit],
   template: `
     <section>
-      <h1>Calendar</h1>
+      <h2>Calendar</h2>
     </section>
     <section>
       <form>
@@ -22,7 +22,7 @@ import { HabitService } from '../habit.service';
       }
     </section>
   `,
-  styleUrls: ['./home.css'],
+  styleUrls: ['../../styles.css', './home.css'],
 })
 
 export class Home {
