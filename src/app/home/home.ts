@@ -13,18 +13,26 @@ import { Habit } from '../habit/habit';
       </form>
     </section>
     <section class="results">
-      <app-habit [habit]="habit"></app-habit>
+      @for(habit of habitList; track $index) {
+        <app-habit [habit]="habit"></app-habit>
+      }
     </section>
   `,
   styleUrls: ['./home.css'],
 })
 export class Home {
   readonly baseUrl = 'https://angular.dev/assets/images/tutorials/common';
-
-  habit: HabitInfo = {
-    id: 9999,
-    name: 'Salt gargle',
-    tags: ['Hygene'],
-  };
+  habitList: HabitInfo[] = [
+    {
+      id: 1,
+      name: 'Drink water',
+      tags: ['Health', 'Hydration'],
+    },
+    {
+      id: 2,
+      name: 'Salt gargle',
+      tags: ['Hygene'],
+    },
+  ];
 }
 

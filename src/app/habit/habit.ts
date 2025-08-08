@@ -8,7 +8,9 @@ import { HabitInfo } from '../habit';
   template: `
     <section class="habit-display">
       <h2 class="habit-display-heading">{{ habit().name }}</h2>
-      <p class="habit-display-tags">{{ habit().tags }}</p>
+      @for(tag of habit().tags; track $index) {
+        <a class="habit-display-tags" href="#">{{ tag }}</a>
+      }
     </section>
   `,
   styleUrls: ['./habit.css'],
