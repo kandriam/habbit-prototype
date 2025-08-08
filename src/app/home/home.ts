@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HabitInfo } from '../habit';
 import { Habit } from '../habit/habit';
+import { HabitService } from '../habit.service';
 
 @Component({
   selector: 'app-home',
@@ -25,26 +26,11 @@ import { Habit } from '../habit/habit';
 })
 
 export class Home {
-  readonly baseUrl = 'https://angular.dev/assets/images/tutorials/common';
-  habitList: HabitInfo[] = [
-    {
-      id: 1,
-      name: 'Drink water',
-      tags: ['Health', 'Hydration'],
-      timesperday: 1,
-    },
-    {
-      id: 2,
-      name: 'Brush teeth',
-      tags: ['Hygene'],
-      timesperday: 2,
-    },
-    {
-      id: 3,
-      name: 'Salt gargle',
-      tags: ['Hygene'],
-      timesperday: 1,
-    },
-  ];
+  habitList: HabitInfo[] = [];
+  habitService: HabitService = inject(HabitService);
+  constructor() {
+    this.habitList = this.habitService.getAllHabits();
+  }
+
 }
 
