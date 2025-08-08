@@ -31,8 +31,11 @@
 }
 
 .details-button:hover {
-    background-color: var(--g1-color);
     box-shadow: 0px 5px 5px var(--g4-color);
+}
+
+.details-button:active {
+    background-color: var(--g1-color);
 }
 
 .habit-tags {
@@ -57,6 +60,9 @@
 }
 
 .habit-tags:hover {
-    background-color: var(--g1-color);
     box-shadow: 0px 5px 5px var(--g4-color);
+}
+
+.habit-tags:active {
+    background-color: var(--g1-color);
 }

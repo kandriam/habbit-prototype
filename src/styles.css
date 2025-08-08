@@ -40,12 +40,18 @@ button.primary {
   margin: 5px;
 
   text-decoration: none;
+  font-weight: bolder;
   color: var(--g5-color);
   
   background-color: var(--g2-color);
 
   transition: background-color 0.5s;
   transition: box-shadow 0.5s;
+}
+
+button.primary:hover {
+    /* background-color: var(--g3-color); */
+    box-shadow: 0px 5px 5px var(--g4-color);
 }
 
 button.primary:active {

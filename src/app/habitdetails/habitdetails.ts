@@ -1,17 +1,27 @@
 import {Component, inject} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { RouterLink, RouterOutlet, ActivatedRoute} from '@angular/router';
 import {HabitService} from '../habit.service';
 import {HabitInfo} from '../habit';
 
 @Component({
   selector: 'app-habitdetails',
-  imports: [],
+  imports: [RouterLink, RouterOutlet],
   template: `
     <article class="habit-details">
-      <h1>{{habit?.name}}</h1>
+      <div style="display: flex; justify-content: space-between;">
+        <h1>{{habit?.name}}</h1>
+        <button class="primary" [routerLink]="['/']">Back</button>
+      </div>
       <section class="habit-details-section">
         {{ habit?.timesperinstance }} time per day
       </section>
+
+      @if (habit?.description) {
+        <section class="habit-details-section">
+          <p>{{ habit?.description }}</p>
+        </section>
+      }
+
       <section class="habit-details-section">
         @for (tag of habit?.tags; track $index) {
           <a class="habit-tags" href="#">{{ tag }}</a>
