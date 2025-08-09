@@ -3,7 +3,7 @@ export interface HabitInfo {
     name: string;
     description?: string;
 
-    tags: string[];
+    tags?: string[];
 
     timesperinstance: number;
 

@@ -1,6 +1,6 @@
 .habit-thumbnail {
   border: solid 1px var(--g5-color);
-  background: var(--g3-color);
+  background: var(--g2-color);
   border-radius: 15px;
   padding: 10px;
   margin: 5px;;
@@ -43,7 +43,7 @@
   padding: 5px 5px 5px 5px;
   margin: 5px;
 
-  border: 1px solid;
+  border: 2px solid;
   border-radius: 10px;
 
   font-size: small;

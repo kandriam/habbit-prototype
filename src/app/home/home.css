@@ -1,32 +1,48 @@
 .results {
-  /* display: grid; */
-  column-gap: 14px;
-  row-gap: 14px;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
-  margin-top: 50px;
   justify-content: space-around;
 }
 
+.home-container {
+  width: auto;
+  border: solid 1px var(--g5-color);
+  background-color: var(--g2-color);
+  border-radius: 15px;
+  padding: 10px;
+  margin: 5px;
+}
+
+input {
+  border: solid 1px var(--g5-color);
+  padding: 5px;
+  border-radius: 8px;
+  margin: 5px;
+}
+
 input[type="text"] {
+  width: auto;
+  border-radius: 5px;
+}
+
+input[type="number"] {
+  width: 20%;
+  border-radius: 20px;
+}
+
+label {
+  font-weight: bold;
+  margin-right: 5px;
+  font-size: small;
+}
+
+label:has(+ input:required)::after {
+  content: " *";
+  color: pink; /* Optional: Make the asterisk red */
+}
+
+textarea {
+  width: max-content;
+  height: 50px;
   border: solid 1px var(--g5-color);
   padding: 10px;
   border-radius: 8px;
-  margin-right: 4px;
-  display: inline-block;
-  width: 30%;
-}
-
-
-@media (min-width: 500px) and (max-width: 768px) {
-  .results {
-      grid-template-columns: repeat(2, 1fr);
-  }
-  input[type="text"] {
-      width: 70%;
-  }   
-}
-@media (max-width: 499px) {
-  .results {
-      grid-template-columns: 1fr;
-  }    
 }
