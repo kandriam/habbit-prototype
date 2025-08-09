@@ -3,6 +3,7 @@
   background: var(--g3-color);
   border-radius: 15px;
   padding: 10px;
+  margin: 5px;;
   transition: background-color 0.5s;
   transition: box-shadow 0.5s;
 }
@@ -45,7 +46,7 @@
   border: 1px solid;
   border-radius: 10px;
 
-
+  font-size: small;
   font-style: italic;
 
   color: var(--g3-color);

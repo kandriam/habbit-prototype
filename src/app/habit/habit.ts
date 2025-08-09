@@ -8,7 +8,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   template: `
     <section class="habit-thumbnail">
       <div style="display: flex; justify-content: space-between;">
-        <h2>{{ habit().name }}</h2>
+        <h3>{{ habit().name }}</h3>
         <a [routerLink]="['/details', habit().id]" class="details-button">Details</a>
       </div>
       <div class="thumbnail-sectin">

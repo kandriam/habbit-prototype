@@ -6,7 +6,7 @@ import {
   PathLocationStrategy,
   Title,
   ViewportScroller
-} from "./chunk-GD5MTLHS.js";
+} from "./chunk-XCOPYIMB.js";
 import {
   APP_BOOTSTRAP_LISTENER,
   ApplicationRef,
@@ -110,8 +110,7 @@ import {
   ɵɵloadQuery,
   ɵɵqueryRefresh,
   ɵɵsanitizeUrlOrResourceUrl
-} from "./chunk-6PYXJ3M6.js";
-import "./chunk-6KNO4II2.js";
+} from "./chunk-SYHEP3OL.js";
 import {
   __async,
   __spreadProps,
