@@ -6,7 +6,7 @@
             "tags": ["Health", "Hydration"],
             "timesperinstance": 5,
             "isactive": true,
-            "frequency": "daily",
+            "frequency": "daily"
         },
         {
             "id": 2,
@@ -14,7 +14,7 @@
             "tags": ["Hygene"],
             "timesperinstance": 2,
             "isactive": true,
-            "frequency": "daily",
+            "frequency": "daily"
         },
         {
             "id": 3,
@@ -22,7 +22,7 @@
             "tags": ["Hygene"],
             "timesperinstance": 1,
             "isactive": true,
-            "frequency": "daily",
+            "frequency": "daily"
         },
         {
             "id": 4,
@@ -31,7 +31,7 @@
             "timesperinstance": 1,
             "isactive": true,
             "frequency": "daily",
-            "description": "Use teeth strip to whiten teeth. 1. Apply the strip to your teeth. 2. Wait for 30 minutes. 3. Remove the strip and rinse/brush your mouth.",
+            "description": "Use teeth strip to whiten teeth. 1. Apply the strip to your teeth. 2. Wait for 30 minutes. 3. Remove the strip and rinse/brush your mouth."
         },
         {
             "id": 5,
@@ -40,7 +40,7 @@
             "timesperinstance": 1,
             "isactive": true,
             "frequency": "daily",
-            "description": "Go to the gym and exercise. 1. Warm up for 10 minutes. 2. Treadmill. 3. Do strength training for 30 minutes. 4. Cool down for 10 minutes.",
+            "description": "Go to the gym and exercise. 1. Warm up for 10 minutes. 2. Treadmill. 3. Do strength training for 30 minutes. 4. Cool down for 10 minutes."
         },
         {
             "id": 6,
