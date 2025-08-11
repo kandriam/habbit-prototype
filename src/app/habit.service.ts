@@ -58,4 +58,10 @@ export class HabitService {
   getHabitsById(id: number): HabitInfo | undefined {
     return this.habitList.find((housingLocation) => housingLocation.id === id);
   }
+
+  editHabit(name: string, timesperinstance: number, frequency: string, description: string, tags: string): void {
+    console.log(
+      `Editing habit: ${name}, ${timesperinstance}, ${frequency}, ${description}, ${tags}`
+    )
+  }
 }

@@ -1,11 +1,12 @@
-import {Component, inject} from '@angular/core';
-import { RouterLink, RouterOutlet, ActivatedRoute} from '@angular/router';
-import {HabitService} from '../habit.service';
-import {HabitInfo} from '../habit';
+import { Component, inject } from '@angular/core';
+import { RouterLink, RouterOutlet, ActivatedRoute } from '@angular/router';
+import { HabitService } from '../habit.service';
+import { HabitInfo } from '../habit';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-habitdetails',
-  imports: [RouterLink, RouterOutlet],
+  imports: [RouterLink, RouterOutlet, ReactiveFormsModule],
   template: `
     <article class="habit-details">
       <div style="display: flex; justify-content: space-between;">
@@ -34,18 +35,18 @@ import {HabitInfo} from '../habit';
         }
       </section>
 
-      <form>
+      <form [formGroup]="applyForm" (submit)="editHabit()">
           <div class="habit-container">
             <h3>Edit Habit</h3>
             <div>              
               <label for="habit-name">Habit Name:</label>
-              <input type="text" name="habit-name" value={{habit?.name}} required>
+              <input type="text" name="habit-name" value={{habit?.name}} formControlName="name" required>
             </div>
             <div>
-              <input type="number" name="habit-timesperinstance" value={{habit?.timesperinstance}}>
+              <input type="number" name="habit-timesperinstance" value={{habit?.timesperinstance}} formControlName="timesperinstance">
               <label for="habit-timesperinstance">time(s) per</label>
-              <select name="habit-frequency" required>
-                <option value="daily">Day</option>
+              <select name="habit-frequency" formControlName="frequency">
+                <option value="daily" selected="selected">Day</option>
                 <option value="weekly">Week</option>
                 <option value="monthly">Month</option>
               </select>
@@ -53,10 +54,10 @@ import {HabitInfo} from '../habit';
 
             <label for="habit-description">Description:</label>
             <br>
-            <textarea name="habit-description" placeholder="Description (optional)">{{habit?.description}}</textarea>
+            <textarea name="habit-description" placeholder="Description (optional)" formControlName="description">{{habit?.description}}</textarea>
             <div>
             <label for="habit-tags">Tags:</label>
-            <input type="text" name="habit-tags" value={{habit?.tags}} />
+            <input type="text" name="habit-tags" value={{habit?.tags}} formControlName="tags">
             </div>
             <button class="primary" type="submit">Save Habit</button>
           </div>
@@ -70,11 +71,28 @@ export class Details {
   route: ActivatedRoute = inject(ActivatedRoute);
   habitService: HabitService = inject(HabitService);
   habit: HabitInfo | undefined;
-  // habitId = -1;
 
+  applyForm = new FormGroup({
+      name: new FormControl(''),
+      timesperinstance: new FormControl(''),
+      frequency: new FormControl(''),
+      description: new FormControl(''),
+      tags: new FormControl(''),      
+  });
 
   constructor() {
     const habitId = Number(this.route.snapshot.params['id']);
     this.habit = this.habitService.getHabitsById(habitId);
+    
+  }
+
+  editHabit() {
+    this.habitService.editHabit(
+      this.applyForm.value.name ?? '',
+      Number(this.applyForm.value.timesperinstance) ?? 1,
+      this.applyForm.value.frequency ?? 'daily',
+      this.applyForm.value.description ?? '',
+      this.applyForm.value.tags ?? '',
+    );
   }
  }

@@ -1,12 +1,14 @@
 import {
+  Title
+} from "./chunk-G2YCKT7E.js";
+import {
   HashLocationStrategy,
   LOCATION_INITIALIZED,
   Location,
   LocationStrategy,
   PathLocationStrategy,
-  Title,
   ViewportScroller
-} from "./chunk-GD5MTLHS.js";
+} from "./chunk-JY5JOQIC.js";
 import {
   APP_BOOTSTRAP_LISTENER,
   ApplicationRef,
@@ -110,7 +112,7 @@ import {
   ɵɵloadQuery,
   ɵɵqueryRefresh,
   ɵɵsanitizeUrlOrResourceUrl
-} from "./chunk-6PYXJ3M6.js";
+} from "./chunk-Z2BEVVP4.js";
 import "./chunk-6KNO4II2.js";
 import {
   __async,
