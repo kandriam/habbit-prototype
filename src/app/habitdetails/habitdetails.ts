@@ -71,19 +71,20 @@ export class Details {
   route: ActivatedRoute = inject(ActivatedRoute);
   habitService: HabitService = inject(HabitService);
   habit: HabitInfo | undefined;
+  applyForm!: FormGroup;
 
-  applyForm = new FormGroup({
-      name: new FormControl(''),
-      timesperinstance: new FormControl(''),
-      frequency: new FormControl(''),
-      description: new FormControl(''),
-      tags: new FormControl(''),      
-  });
-
+  // Initialize the form with the habit's current values
   constructor() {
     const habitId = Number(this.route.snapshot.params['id']);
     this.habit = this.habitService.getHabitsById(habitId);
-    
+
+    this.applyForm = new FormGroup({
+      name: new FormControl(this.habit?.name ?? ''),
+      timesperinstance: new FormControl(this.habit?.timesperinstance ?? 1),
+      frequency: new FormControl(this.habit?.frequency ?? 'daily'),
+      description: new FormControl(this.habit?.description ?? ''),
+      tags: new FormControl(this.habit?.tags ?? ''),      
+    });
   }
 
   editHabit() {
