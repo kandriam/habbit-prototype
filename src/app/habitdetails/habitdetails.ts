@@ -58,7 +58,7 @@ import {HabitInfo} from '../habit';
             <label for="habit-tags">Tags:</label>
             <input type="text" name="habit-tags" value={{habit?.tags}} />
             </div>
-            <button class="primary" type="submit">Add Habit</button>
+            <button class="primary" type="submit">Save Habit</button>
           </div>
         </form>
     </article>
