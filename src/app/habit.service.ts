@@ -65,4 +65,10 @@ export class HabitService {
       `Editing habit: ${name}, ${timesperinstance}, ${frequency}, ${description}, ${tags}`
     )
   }
+
+  createHabit(name: string, timesperinstance: number, frequency: string, description: string, tags: string): void {
+    console.log(
+      `Creating habit: ${name}, ${timesperinstance}, ${frequency}, ${description}, ${tags}`
+    )
+  }
 }
