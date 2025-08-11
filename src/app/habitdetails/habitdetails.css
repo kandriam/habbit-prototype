@@ -43,3 +43,10 @@
   text-decoration: none;
   color: var(--primary-color);
 }
+
+.habit-container {
+  background-color: var(--g2-color);
+  border-radius: 15px;
+  padding: 10px;
+  margin: 5px;
+}

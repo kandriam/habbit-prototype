@@ -15,14 +15,23 @@ import { HabitService } from '../habit.service';
               <label for="habit-name">Habit Name:</label>
               <input type="text" name="habit-name" placeholder="Habit name" required>
             </div>
+            <div>
+              <input type="number" name="habit-timesperinstance" value=1>
+              <label for="habit-timesperinstance">time(s) per</label>
+              <select name="habit-frequency" required>
+                <option value="daily">Day</option>
+                <option value="weekly">Week</option>
+                <option value="monthly">Month</option>
+              </select>
+            </div>
 
             <label for="habit-description">Description:</label>
             <br>
             <textarea name="habit-description" placeholder="Description (optional)"></textarea>
-            <br>
+            <div>
             <label for="habit-tags">Tags:</label>
             <input type="text" name="habit-tags" placeholder="Tags (separated by commas)" />
-            <br>
+            </div>
             <button class="primary" type="submit">Add Habit</button>
           </div>
         </form>

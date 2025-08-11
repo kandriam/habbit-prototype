@@ -12,8 +12,14 @@ import {HabitInfo} from '../habit';
         <h1>{{habit?.name}}</h1>
         <button class="primary" [routerLink]="['/']">Back</button>
       </div>
+
       <section class="habit-details-section">
-        {{ habit?.timesperinstance }} time per day
+        {{ habit?.timesperinstance }}
+        @if (habit?.timesperinstance == 1) {
+          time
+        } @else {
+          times
+        } {{ habit?.frequency }}
       </section>
 
       @if (habit?.description) {
@@ -27,7 +33,34 @@ import {HabitInfo} from '../habit';
           <a class="habit-tags" href="#">{{ tag }}</a>
         }
       </section>
-      
+
+      <form>
+          <div class="habit-container">
+            <h3>Edit Habit</h3>
+            <div>              
+              <label for="habit-name">Habit Name:</label>
+              <input type="text" name="habit-name" value={{habit?.name}} required>
+            </div>
+            <div>
+              <input type="number" name="habit-timesperinstance" value={{habit?.timesperinstance}}>
+              <label for="habit-timesperinstance">time(s) per</label>
+              <select name="habit-frequency" required>
+                <option value="daily">Day</option>
+                <option value="weekly">Week</option>
+                <option value="monthly">Month</option>
+              </select>
+            </div>
+
+            <label for="habit-description">Description:</label>
+            <br>
+            <textarea name="habit-description" placeholder="Description (optional)">{{habit?.description}}</textarea>
+            <div>
+            <label for="habit-tags">Tags:</label>
+            <input type="text" name="habit-tags" value={{habit?.tags}} />
+            </div>
+            <button class="primary" type="submit">Add Habit</button>
+          </div>
+        </form>
     </article>
   `,
   styleUrls: [ '../../styles.css', './habitdetails.css'],

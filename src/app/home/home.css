@@ -10,39 +10,3 @@
   padding: 10px;
   margin: 5px;
 }
-
-input {
-  border: solid 1px var(--g5-color);
-  padding: 5px;
-  border-radius: 8px;
-  margin: 5px;
-}
-
-input[type="text"] {
-  width: auto;
-  border-radius: 5px;
-}
-
-input[type="number"] {
-  width: 20%;
-  border-radius: 20px;
-}
-
-label {
-  font-weight: bold;
-  margin-right: 5px;
-  font-size: small;
-}
-
-label:has(+ input:required)::after {
-  content: " *";
-  color: pink; /* Optional: Make the asterisk red */
-}
-
-textarea {
-  width: max-content;
-  height: 50px;
-  border: solid 1px var(--g5-color);
-  padding: 10px;
-  border-radius: 8px;
-}
