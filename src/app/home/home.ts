@@ -29,7 +29,7 @@ import { HabitService } from '../habit.service';
             <br>
             <textarea name="habit-description" placeholder="Description (optional)"></textarea>
             <div>
-            <label for="habit-tags">Tags:</label>
+            <label for="habit-tags">Tags (separated by commas):</label>
             <input type="text" name="habit-tags" placeholder="Tags (separated by commas)" />
             </div>
             <button class="primary" type="submit">Add Habit</button>

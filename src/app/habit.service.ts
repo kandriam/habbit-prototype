@@ -55,6 +55,7 @@ export class HabitService {
   getAllHabits(): HabitInfo[] {
     return this.habitList;
   }
+  
   getHabitsById(id: number): HabitInfo | undefined {
     return this.habitList.find((housingLocation) => housingLocation.id === id);
   }

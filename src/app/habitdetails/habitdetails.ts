@@ -56,7 +56,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
             <br>
             <textarea name="habit-description" placeholder="Description (optional)" formControlName="description">{{habit?.description}}</textarea>
             <div>
-            <label for="habit-tags">Tags:</label>
+            <label for="habit-tags">Tags (separated by commas):</label>
             <input type="text" name="habit-tags" value={{habit?.tags}} formControlName="tags">
             </div>
             <button class="primary" type="submit">Save Habit</button>
