@@ -68,8 +68,10 @@ export class Home {
   });
 
   constructor() {
-    this.habitList = this.habitService.getAllHabits();
-    this.filteredHabitList = this.habitList;
+    this.habitService.getAllHabits().then((habitList: HabitInfo[]) => {
+      this.habitList = habitList;
+      this.filteredHabitList = habitList;
+    });
   }
 
   filterResults(text: string) {
