@@ -1,18 +1,7 @@
 {
   "habits": [
     {
-      "id": 0,
-      "name": "Test habit",
-      "timesperinstance": 5,
-      "frequency": "daily",
-      "description": "Test description",
-      "tags": [
-        "Health"
-      ]
-    },
-
-    {
-      "id": 1,
+      "id": "1",
       "name": "Brush teeth",
       "tags": [
         "Hygene"
@@ -22,7 +11,7 @@
       "frequency": "daily"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Salt gargle",
       "tags": [
         "Hygene"
@@ -32,17 +21,7 @@
       "frequency": "daily"
     },
     {
-      "id": 3,
-      "name": "Teeth strip",
-      "timesperinstance": 1,
-      "frequency": "daily",
-      "description": "Use teeth strip to whiten teeth.\n1. Apply the strip to your teeth.\n2. Wait for 30 minutes.\n3. Remove the strip and rinse/brush your mouth",
-      "tags": [
-        "Hygene"
-      ]
-    },
-    {
-      "id": 4,
+      "id": "4",
       "name": "Go to LC gym",
       "tags": [
         "Health",
@@ -54,7 +33,7 @@
       "description": "Go to the gym and exercise. 1. Warm up for 10 minutes. 2. Treadmill. 3. Do strength training for 30 minutes. 4. Cool down for 10 minutes."
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Write at least a page",
       "timesperinstance": 1,
       "frequency": "daily",
@@ -64,7 +43,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Skincare",
       "timesperinstance": 1,
       "frequency": "daily",
@@ -75,35 +54,13 @@
       ]
     },
     {
-      "id": 7,
-      "name": "Brush hair",
+      "id": 9,
+      "name": "Test again",
       "timesperinstance": 1,
       "frequency": "daily",
-      "description": "",
+      "description": "rejke",
       "tags": [
-        "Hygene"
-      ]
-    },
-    {
-      "id": 8,
-      "name": "Drink water",
-      "timesperinstance": 5,
-      "frequency": "daily",
-      "description": "Drink a whole bottle of water",
-      "tags": [
-        "Health",
-        "Hydration"
-      ]
-    },
-    {
-      "id": "9",
-      "name": "Test habit2",
-      "timesperinstance": 5,
-      "frequency": "daily",
-      "description": "Test description",
-      "tags": [
-        "Health",
-        "Hydration"
+        "jkwnfw kjkwfl"
       ]
     }
   ]

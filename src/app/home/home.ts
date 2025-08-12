@@ -14,7 +14,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
             <h3>Add New Habit</h3>
             <div>              
               <label for="habit-name">Habit Name:</label>
-              <input type="text" name="habit-name" placeholder="Habit name" formControlName="name" required>
+              <input type="text" name="habit-name" placeholder="Habit name" formControlName="name" autocomplete="off" required>
             </div>
             <div>
               <input type="number" name="habit-timesperinstance" value=1 formControlName="timesperinstance">
@@ -31,7 +31,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
             <textarea name="habit-description" placeholder="Description (optional)" formControlName="description"></textarea>
             <div>
             <label for="habit-tags">Tags (separated by commas):</label>
-            <input type="text" name="habit-tags" placeholder="Tags (separated by commas)" formControlName="tags">
+            <input type="text" name="habit-tags" placeholder="Tags (separated by commas)" formControlName="tags" autocomplete="off">
             </div>
             <button class="primary" type="submit">Add Habit</button>
           </div>
