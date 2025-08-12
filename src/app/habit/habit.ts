@@ -1,6 +1,8 @@
-import { Component, input } from '@angular/core';
+import { Component, input, inject } from '@angular/core';
 import { HabitInfo } from '../habit';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { HabitService } from '../habit.service';
+
 @Component({
   selector: 'app-habit',
   standalone: true,
@@ -9,7 +11,10 @@ import { RouterLink, RouterOutlet } from '@angular/router';
     <section class="habit-thumbnail">
       <div style="display: flex; justify-content: space-between;">
         <h3>{{ habit().name }}</h3>
-        <a [routerLink]="['/details', habit().id]" class="details-button">Details</a>
+        <div>
+          <a class="details-button" (click)="deleteHabit(habit().id)">Delete</a>
+          <a [routerLink]="['/details', habit().id]" class="details-button">Details</a>
+        </div>
       </div>
       <div class="thumbnail-sectin">
         @if (habit().timesperinstance === 1) {
@@ -28,6 +33,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrls: ['../../styles.css', './habit.css'],
 })
 export class Habit {
+  habitService: HabitService = inject(HabitService);
   habit = input.required<HabitInfo>()
   
   searchByTag(tag: string): void {
@@ -37,6 +43,11 @@ export class Habit {
       searchInput.dispatchEvent(new Event('input'));
     }
 
+  }
+  
+  deleteHabit(id: number) {
+    console.log(`Deleting habit from home: ${id}`)
+    this.habitService.deleteHabit(id);
   }
 }
 

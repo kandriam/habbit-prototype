@@ -119,8 +119,9 @@ export class Details {
 
   deleteHabit(id: number | undefined) {
     if (id !== undefined) {
-      console.log(`Delete habit ${id}`);
-      // You can call your delete method here, e.g. this.habitService.deleteHabit(id);
+      console.log(`Deleting habit from details: ${id}`)
+      this.habitService.deleteHabit(id);
+      // window.location.href = '/';
     }
   }
 }
