@@ -44,9 +44,17 @@
   color: var(--primary-color);
 }
 
-.habit-container {
+.primary-container {
   background-color: var(--g2-color);
   border-radius: 15px;
   padding: 10px;
   margin: 5px;
+}
+
+.secondary-container {
+  background-color: var(--g1-color);
+  border-radius: 15px;
+  padding: 10px;
+  margin: 5px;
+  margin-block: 50px;
 }

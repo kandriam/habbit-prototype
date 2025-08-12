@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HabitInfo } from './habit';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -17,10 +18,26 @@ export class HabitService {
     const locationJson = await data.json();
     return locationJson[0] ?? {};  }
 
-  editHabit(name: string, timesperinstance: number, frequency: string, description: string, tags: string): void {
+  editHabit(id:number, name: string, timesperinstance: number, frequency: string, description: string, tags: string[]): void {
     console.log(
-      `Editing habit: ${name}, ${timesperinstance}, ${frequency}, ${description}, ${tags}`
-    )
+      `Editing habit: ${id}, ${name}, ${timesperinstance}, ${frequency}, ${description}, ${tags.join(",")}`
+    );
+
+    fetch(`${this.url}/${id}`, {
+      method: 'PUT',
+      headers: {
+      'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+      id,
+      name,
+      timesperinstance,
+      frequency,
+      description,
+      tags
+      })
+    });
+    
   }
 
   createHabit(name: string, timesperinstance: number, frequency: string, description: string, tags: string): void {

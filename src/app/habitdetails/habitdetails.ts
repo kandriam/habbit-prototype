@@ -9,6 +9,8 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   imports: [RouterLink, RouterOutlet, ReactiveFormsModule],
   template: `
     <article class="habit-details">
+      <div class="primary-container">
+
       <div style="display: flex; justify-content: space-between;">
         <h1>{{habit?.name}}</h1>
         <button class="primary" [routerLink]="['/']">Back</button>
@@ -34,9 +36,10 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
           <a class="habit-tags" href="#">{{ tag }}</a>
         }
       </section>
+      </div>
 
       <form [formGroup]="applyForm" (submit)="editHabit()">
-          <div class="habit-container">
+          <div class="secondary-container">
             <h3>Edit Habit</h3>
             <div>              
               <label for="habit-name">Habit Name:</label>
@@ -54,7 +57,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
             <label for="habit-description">Description:</label>
             <br>
-            <textarea name="habit-description" placeholder="Description (optional)" formControlName="description">{{habit?.description}}</textarea>
+            <textarea name="habit-description" placeholder="Description (optional)" formControlName="description"></textarea>
             <div>
             <label for="habit-tags">Tags (separated by commas):</label>
             <input type="text" name="habit-tags" value={{habit?.tags}} formControlName="tags">
@@ -71,32 +74,59 @@ export class Details {
   route: ActivatedRoute = inject(ActivatedRoute);
   habitService: HabitService = inject(HabitService);
   habit: HabitInfo | undefined;
+  applyForm: FormGroup;
 
-  applyForm = new FormGroup({
-    name: new FormControl(''),
-    timesperinstance: new FormControl(1),
-    frequency: new FormControl('daily'),
-    description: new FormControl(''),
-    tags: new FormControl(''),
-  }); 
+  
+  // applyForm = new FormGroup({
+  //   name: new FormControl(''),
+  //   timesperinstance: new FormControl(1),
+  //   frequency: new FormControl('daily'),
+  //   description: new FormControl(''),
+  //   tags: new FormControl(''),
+  // }); 
 
   // Initialize the habit's details page with the habit's current values
+  // constructor() {
+  //   const habitId = Number(this.route.snapshot.params['id']);
+  //   this.habitService.getHabitsById(habitId).then((habit) => {
+  //     this.habit = habit;
+  //   })
+
   constructor() {
     const habitId = Number(this.route.snapshot.params['id']);
     this.habitService.getHabitsById(habitId).then((habit) => {
       this.habit = habit;
-    })
+      this.applyForm.patchValue({
+        name: habit?.name ?? '',
+        timesperinstance: habit?.timesperinstance ?? 1,
+        frequency: habit?.frequency ?? 'daily',
+        description: habit?.description ?? '',
+        tags: (habit?.tags ?? []).join(', ')
+      });
+    });
 
+    this.applyForm = new FormGroup({
+      name: new FormControl(''),
+      timesperinstance: new FormControl(1),
+      frequency: new FormControl('daily'),
+      description: new FormControl(''),
+      tags: new FormControl(''),
+    });
   }
 
   // Edit the habit using the form values
   editHabit() {
     this.habitService.editHabit(
+      this.habit?.id ?? 0,
       this.applyForm.value.name ?? '',
       Number(this.applyForm.value.timesperinstance) ?? 1,
       this.applyForm.value.frequency ?? 'daily',
       this.applyForm.value.description ?? '',
-      this.applyForm.value.tags ?? '',
+      (this.applyForm.value.tags ?? '')
+        .split(',')
+        .map((tag: string) => tag.trim())
+        .filter((tag: string) => tag.length > 0),
     );
+    window.location.reload;
   }
  }

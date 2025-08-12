@@ -10,7 +10,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   template: `
     <section>
         <form [formGroup]="applyForm" (submit)="createHabit()">
-          <div class="home-container">
+          <div class="primary-container">
             <h3>Add New Habit</h3>
             <div>              
               <label for="habit-name">Habit Name:</label>
