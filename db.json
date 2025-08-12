@@ -2,15 +2,16 @@
   "habits": [
     {
       "id": "0",
-      "name": "Drink water",
+      "name": "Test habit",
       "timesperinstance": 5,
       "frequency": "daily",
-      "description": "Drink a whole bottle of water",
+      "description": "Test description",
       "tags": [
         "Health",
         "Hydration"
       ]
     },
+
     {
       "id": "1",
       "name": "Brush teeth",
@@ -82,6 +83,28 @@
       "description": "",
       "tags": [
         "Hygene"
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Drink water",
+      "timesperinstance": 5,
+      "frequency": "daily",
+      "description": "Drink a whole bottle of water",
+      "tags": [
+        "Health",
+        "Hydration"
+      ]
+    },
+    {
+      "id": "0",
+      "name": "Test habit",
+      "timesperinstance": 5,
+      "frequency": "daily",
+      "description": "Test description",
+      "tags": [
+        "Health",
+        "Hydration"
       ]
     }
   ]

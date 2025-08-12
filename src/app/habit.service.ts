@@ -67,9 +67,7 @@ export class HabitService {
   }
 
   deleteHabit(id: number) {
-    console.log(
-      `Deleting habit: ${id}`
-    );
+    console.log(`Deleting habit: ${id}`);
 
     // fetch(`${this.url}/${id}`, {
     //   method: 'DELETE',
@@ -77,5 +75,7 @@ export class HabitService {
     //   'Content-Type': 'application/json'
     //   }
     // });
+    console.log(`habit: ${id} deleted`);
+
   }
 }
