@@ -20,7 +20,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
       </div>
       <div class="thumbnail-section">
       @for(tag of habit().tags; track $index) {
-        <a class="habit-tags" href="#">{{ tag }}</a>
+        <a class="habit-tags" (click)="searchByTag(tag)" >{{ tag }}</a>
       }
       </div>
     </section>
@@ -29,4 +29,14 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class Habit {
   habit = input.required<HabitInfo>()
+  
+  searchByTag(tag: string): void {
+    const searchInput = document.getElementById('search-bar') as HTMLInputElement | null;
+    if (searchInput) {
+      searchInput.value = tag;
+      searchInput.dispatchEvent(new Event('input'));
+    }
+
+  }
 }
+

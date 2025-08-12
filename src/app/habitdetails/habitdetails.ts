@@ -76,22 +76,6 @@ export class Details {
   habit: HabitInfo | undefined;
   applyForm: FormGroup;
 
-  
-  // applyForm = new FormGroup({
-  //   name: new FormControl(''),
-  //   timesperinstance: new FormControl(1),
-  //   frequency: new FormControl('daily'),
-  //   description: new FormControl(''),
-  //   tags: new FormControl(''),
-  // }); 
-
-  // Initialize the habit's details page with the habit's current values
-  // constructor() {
-  //   const habitId = Number(this.route.snapshot.params['id']);
-  //   this.habitService.getHabitsById(habitId).then((habit) => {
-  //     this.habit = habit;
-  //   })
-
   constructor() {
     const habitId = Number(this.route.snapshot.params['id']);
     this.habitService.getHabitsById(habitId).then((habit) => {
@@ -105,6 +89,7 @@ export class Details {
       });
     });
 
+    // Populate edit form with habit's existing values
     this.applyForm = new FormGroup({
       name: new FormControl(''),
       timesperinstance: new FormControl(1),
@@ -114,7 +99,7 @@ export class Details {
     });
   }
 
-  // Edit the habit using the form values
+  // Edit the habit using the form's inputted values
   editHabit() {
     this.habitService.editHabit(
       this.habit?.id ?? 0,

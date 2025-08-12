@@ -12,6 +12,7 @@ export interface HabitInfo {
     enddate?: Date;
     
     frequency?: 'daily' | 'weekly' | 'monthly';
+    // Implement later
     everyxdays?: number; // e.g., every 2 days, every 3 weeks
     daysofweek?: string[]; // e.g., ['Monday', 'Wednesday', 'Friday']
     everyxweeks?: number; // e.g., every 2 weeks

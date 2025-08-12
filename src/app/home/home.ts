@@ -40,7 +40,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
         <section>
           <h2>Habits</h2>
           <form>
-            <input type="text" placeholder="Filter by tag or name" (input)="filterResults(filter.value)" #filter />
+            <input id="search-bar" type="text" placeholder="Filter by tag or name" (input)="filterResults(filter.value)" #filter />
             <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
           </form>
         </section>
@@ -81,7 +81,6 @@ export class Home {
     }
 
     this.filteredHabitList = this.habitList.filter((habit) =>
-      // Habit?.tags.some((tag) => tag.toLowerCase().includes(text.toLowerCase()))
       habit.name.toLowerCase().includes(text.toLowerCase()) ||
       (habit.tags && habit.tags.some((tag) => tag.toLowerCase().includes(text.toLowerCase())))
     );
