@@ -127,6 +127,6 @@ export class Details {
         .map((tag: string) => tag.trim())
         .filter((tag: string) => tag.length > 0),
     );
-    window.location.reload;
+    window.location.reload();
   }
  }
