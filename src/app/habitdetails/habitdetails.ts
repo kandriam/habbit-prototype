@@ -121,7 +121,7 @@ export class Details {
     if (id !== undefined) {
       console.log(`Deleting habit from details: ${id}`)
       this.habitService.deleteHabit(id);
-      // window.location.href = '/';
     }
+    window.location.href = '/';
   }
 }

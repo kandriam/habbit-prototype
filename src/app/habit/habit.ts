@@ -48,6 +48,7 @@ export class Habit {
   deleteHabit(id: number) {
     console.log(`Deleting habit from home: ${id}`)
     this.habitService.deleteHabit(id);
+    window.location.reload();
   }
 }
 

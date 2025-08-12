@@ -1,19 +1,18 @@
 {
   "habits": [
     {
-      "id": "0",
+      "id": 0,
       "name": "Test habit",
       "timesperinstance": 5,
       "frequency": "daily",
       "description": "Test description",
       "tags": [
-        "Health",
-        "Hydration"
+        "Health"
       ]
     },
 
     {
-      "id": "1",
+      "id": 1,
       "name": "Brush teeth",
       "tags": [
         "Hygene"
@@ -23,7 +22,7 @@
       "frequency": "daily"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Salt gargle",
       "tags": [
         "Hygene"
@@ -33,7 +32,7 @@
       "frequency": "daily"
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Teeth strip",
       "timesperinstance": 1,
       "frequency": "daily",
@@ -43,7 +42,7 @@
       ]
     },
     {
-      "id": "4",
+      "id": 4,
       "name": "Go to LC gym",
       "tags": [
         "Health",
@@ -55,7 +54,7 @@
       "description": "Go to the gym and exercise. 1. Warm up for 10 minutes. 2. Treadmill. 3. Do strength training for 30 minutes. 4. Cool down for 10 minutes."
     },
     {
-      "id": "5",
+      "id": 5,
       "name": "Write at least a page",
       "timesperinstance": 1,
       "frequency": "daily",
@@ -86,7 +85,7 @@
       ]
     },
     {
-      "id": "8",
+      "id": 8,
       "name": "Drink water",
       "timesperinstance": 5,
       "frequency": "daily",
@@ -97,8 +96,8 @@
       ]
     },
     {
-      "id": "0",
-      "name": "Test habit",
+      "id": "9",
+      "name": "Test habit2",
       "timesperinstance": 5,
       "frequency": "daily",
       "description": "Test description",

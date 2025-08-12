@@ -69,12 +69,12 @@ export class HabitService {
   deleteHabit(id: number) {
     console.log(`Deleting habit: ${id}`);
 
-    // fetch(`${this.url}/${id}`, {
-    //   method: 'DELETE',
-    //   headers: {
-    //   'Content-Type': 'application/json'
-    //   }
-    // });
+    fetch(`${this.url}/${id}`, {
+      method: 'DELETE',
+      headers: {
+      'Content-Type': 'application/json'
+      }
+    });
     console.log(`habit: ${id} deleted`);
 
   }
