@@ -34,13 +34,12 @@
     {
       "id": "3",
       "name": "Teeth strip",
+      "timesperinstance": 1,
+      "frequency": "daily",
+      "description": "Use teeth strip to whiten teeth.\n1. Apply the strip to your teeth.\n2. Wait for 30 minutes.\n3. Remove the strip and rinse/brush your mouth",
       "tags": [
         "Hygene"
-      ],
-      "timesperinstance": 1,
-      "isactive": true,
-      "frequency": "daily",
-      "description": "Use teeth strip to whiten teeth. 1. Apply the strip to your teeth. 2. Wait for 30 minutes. 3. Remove the strip and rinse/brush your mouth."
+      ]
     },
     {
       "id": "4",
@@ -57,12 +56,33 @@
     {
       "id": "5",
       "name": "Write at least a page",
+      "timesperinstance": 1,
+      "frequency": "daily",
+      "description": "250 words per page",
       "tags": [
         "Creativity"
-      ],
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Skincare",
       "timesperinstance": 1,
-      "isactive": true,
-      "frequency": "daily"
+      "frequency": "daily",
+      "description": "Moisturizer",
+      "tags": [
+        "Health",
+        "SelfCare"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Brush hair",
+      "timesperinstance": 1,
+      "frequency": "daily",
+      "description": "",
+      "tags": [
+        "Hygene"
+      ]
     }
   ]
 }

@@ -37,12 +37,36 @@ export class HabitService {
       tags
       })
     });
-    
   }
 
   createHabit(name: string, timesperinstance: number, frequency: string, description: string, tags: string): void {
     console.log(
       `Creating habit: ${name}, ${timesperinstance}, ${frequency}, ${description}, ${tags}`
-    )
+    );
+
+    // Fetch all habits to determine the next id
+    this.getAllHabits().then(habits => {
+      const maxId = habits.length > 0 ? Math.max(...habits.map(h => h.id)) : 0;
+      const newId = maxId + 1;
+      fetch(this.url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        id: newId,
+        name,
+        timesperinstance,
+        frequency,
+        description,
+        tags: Array.isArray(tags) ? tags : tags.split(',').map(t => t.trim())
+      })
+      });
+    });
+    window.location.reload();
+  }
+
+  deleteHabit(id: number) {
+    console.log(id);
   }
 }

@@ -14,5 +14,9 @@ RoadMap (later to be own md)
 
 Unordered Tasks
 [ ] Sort home view
+[ ] Track per day
+    - Tracker with length of instancesperday
+    - Start of every day with 0/instancesperday
+    - user can +/- throughout the day
 [ ] Calendar and habit tracker (1 year)
 [ ] Every x days/weeks/months on x weekdays/dates

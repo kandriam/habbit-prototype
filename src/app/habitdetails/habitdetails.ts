@@ -13,7 +13,10 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
       <div style="display: flex; justify-content: space-between;">
         <h1>{{habit?.name}}</h1>
-        <button class="primary" [routerLink]="['/']">Back</button>
+        <div>
+          <button class="primary" (click)="deleteHabit(habit?.id)">Delete Habit</button>
+          <button class="primary" [routerLink]="['/']">Back</button>
+        </div>
       </div>
 
       <section class="habit-details-section">
@@ -75,10 +78,18 @@ export class Details {
   habitService: HabitService = inject(HabitService);
   habit: HabitInfo | undefined;
   applyForm: FormGroup;
+  habitId: number;
 
   constructor() {
-    const habitId = Number(this.route.snapshot.params['id']);
-    this.habitService.getHabitsById(habitId).then((habit) => {
+    this.habitId = Number(this.route.snapshot.params['id']);
+    this.applyForm = new FormGroup({
+      name: new FormControl(''),
+      timesperinstance: new FormControl(1),
+      frequency: new FormControl('daily'),
+      description: new FormControl(''),
+      tags: new FormControl(''),
+    });
+    this.habitService.getHabitsById(this.habitId).then((habit) => {
       this.habit = habit;
       this.applyForm.patchValue({
         name: habit?.name ?? '',
@@ -88,21 +99,12 @@ export class Details {
         tags: (habit?.tags ?? []).join(', ')
       });
     });
-
-    // Populate edit form with habit's existing values
-    this.applyForm = new FormGroup({
-      name: new FormControl(''),
-      timesperinstance: new FormControl(1),
-      frequency: new FormControl('daily'),
-      description: new FormControl(''),
-      tags: new FormControl(''),
-    });
   }
 
   // Edit the habit using the form's inputted values
   editHabit() {
     this.habitService.editHabit(
-      this.habit?.id ?? 0,
+      this.habitId,
       this.applyForm.value.name ?? '',
       Number(this.applyForm.value.timesperinstance) ?? 1,
       this.applyForm.value.frequency ?? 'daily',
@@ -114,4 +116,11 @@ export class Details {
     );
     window.location.reload();
   }
- }
+
+  deleteHabit(id: number | undefined) {
+    if (id !== undefined) {
+      console.log(`Delete habit ${id}`);
+      // You can call your delete method here, e.g. this.habitService.deleteHabit(id);
+    }
+  }
+}
