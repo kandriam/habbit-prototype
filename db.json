@@ -21,6 +21,14 @@
       "frequency": "daily"
     },
     {
+      "id": "3",
+      "name": "Teeth strip",
+      "description": "1. Peel whitestrips from backing liner. 2. Apply gel side of strip to front teeth. Align straight edge of strip with gumline. Fold over teeth and press to secure. 3. After 30 minutes, peel strip from corner and pull gently across to ease removal. Rinse or brush to remove remaining gel.",
+      "timesperinstance": 1,
+      "frequency": "daily",
+      "isactive": true
+    },
+    {
       "id": "4",
       "name": "Go to LC gym",
       "tags": [
