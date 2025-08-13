@@ -51,22 +51,13 @@
     },
     {
       "id": "6",
-      "name": "Pet cat",
+      "name": "read something",
       "timesperinstance": 1,
       "frequency": "daily",
-      "description": "Saka",
+      "description": "news and book",
       "tags": [
-        "Self care"
-      ]
-    },
-    {
-      "id": "7",
-      "name": "Pet cat",
-      "timesperinstance": 3,
-      "frequency": "daily",
-      "description": "Saka",
-      "tags": [
-        ""
+        "Self care",
+        "intellect"
       ]
     }
   ]

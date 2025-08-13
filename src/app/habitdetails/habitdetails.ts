@@ -38,7 +38,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
           <section class="details-section">
             @for (tag of habit?.tags; track $index) {
-              <a class="habit-tags" href="#">{{ tag }}</a>
+              <a class="habit-tags" (click)="searchByTag(tag)">{{ tag }}</a>
             }
           </section>
         </div>
@@ -107,7 +107,23 @@ export class Details {
     });
   }
 
-  // Edit the habit using the form's inputted values
+
+  // searchByTag does not yet work
+  // (Ideally) sends user to home and searches
+  // using the tag
+  searchByTag(tag: string): void {
+    console.log(tag);
+    window.location.href = '/';
+    console.log(window.location)
+    const searchInput = document.getElementById('search-bar') as HTMLInputElement | null;
+    if (searchInput) {
+      searchInput.value = tag;
+      searchInput.dispatchEvent(new Event('input'));
+    }
+  }
+
+  // Call habitService's editHabit() using form inputs
+  // in order to edit the habit's values
   editHabit() {
     this.habitService.editHabit(
       this.habitId,
@@ -123,6 +139,8 @@ export class Details {
     window.location.reload();
   }
 
+  // Call habitService's deleteHabit() using habit's id
+  // in order to delete the habit
   deleteHabit(id: number | undefined) {
     if (id !== undefined) {
       console.log(`Deleting habit from details: ${id}`)
@@ -131,3 +149,4 @@ export class Details {
     window.location.href = '/';
   }
 }
+

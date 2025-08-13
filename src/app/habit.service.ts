@@ -47,6 +47,7 @@ export class HabitService {
 
     // Fetch all habits to determine the next id
     this.getAllHabits().then(habits => {
+      console.log(habits.length);
       const maxId = habits.length > 0 ? Math.max(...habits.map(h => h.id)) : 0;
       const newId = String(maxId + 1);
       fetch(this.url, {
@@ -60,12 +61,17 @@ export class HabitService {
         timesperinstance,
         frequency,
         description,
-        tags: Array.isArray(tags) ? tags : tags.split(',').map(t => t.trim())
+        tags: tags.split(',').map((tag: string) => tag.trim()).filter((tag: string) => tag.length > 0),
+        // tags: Array.isArray(tags) ? tags : tags.split(',').map(t => t.trim())
       })
       });
     });
     window.location.reload();
   }
+  // (this.applyForm.value.tags ?? '')
+        // .split(',')
+        // .map((tag: string) => tag.trim())
+        // .filter((tag: string) => tag.length > 0),
 
   deleteHabit(id: number) {
     fetch(`${this.url}/${id}`, {
