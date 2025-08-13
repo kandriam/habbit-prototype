@@ -29,7 +29,7 @@ export class HabitService {
       'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-      id,
+      id: Number(id),
       name,
       timesperinstance,
       frequency,
@@ -67,8 +67,6 @@ export class HabitService {
   }
 
   deleteHabit(id: number) {
-    console.log(`Deleting habit: ${id}`);
-
     fetch(`${this.url}/${id}`, {
       method: 'DELETE',
       headers: {

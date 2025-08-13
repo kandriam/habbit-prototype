@@ -1,7 +1,7 @@
 {
   "habits": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Brush teeth",
       "tags": [
         "Hygene"
@@ -11,7 +11,7 @@
       "frequency": "daily"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Salt gargle",
       "tags": [
         "Hygene"
@@ -21,7 +21,7 @@
       "frequency": "daily"
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Teeth strip",
       "description": "1. Peel whitestrips from backing liner. 2. Apply gel side of strip to front teeth. Align straight edge of strip with gumline. Fold over teeth and press to secure. 3. After 30 minutes, peel strip from corner and pull gently across to ease removal. Rinse or brush to remove remaining gel.",
       "timesperinstance": 1,
@@ -29,7 +29,7 @@
       "isactive": true
     },
     {
-      "id": "4",
+      "id": 4,
       "name": "Go to LC gym",
       "tags": [
         "Health",
@@ -41,7 +41,7 @@
       "description": "Go to the gym and exercise. 1. Warm up for 10 minutes. 2. Treadmill. 3. Do strength training for 30 minutes. 4. Cool down for 10 minutes."
     },
     {
-      "id": "5",
+      "id": 5,
       "name": "Write at least a page",
       "timesperinstance": 1,
       "frequency": "daily",
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "id": "6",
+      "id": 6,
       "name": "Skincare",
       "timesperinstance": 1,
       "frequency": "daily",
@@ -69,6 +69,16 @@
       "description": "rejke",
       "tags": [
         "jkwnfw kjkwfl"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "f",
+      "timesperinstance": 1,
+      "frequency": "daily",
+      "description": "f",
+      "tags": [
+        "f"
       ]
     }
   ]
