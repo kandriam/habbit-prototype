@@ -3,7 +3,7 @@ import { RouterLink, RouterOutlet, ActivatedRoute } from '@angular/router';
 import { HabitService } from '../habit.service';
 import { HabitInfo } from '../habit';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { Home } from '../home/home';
+
 @Component({
   selector: 'app-habitdetails',
   imports: [RouterLink, RouterOutlet, ReactiveFormsModule],
@@ -76,7 +76,6 @@ import { Home } from '../home/home';
 export class Details {
   route: ActivatedRoute = inject(ActivatedRoute);
   habitService: HabitService = inject(HabitService);
-  home: Home = inject(Home);
   habit: HabitInfo | undefined;
   applyForm: FormGroup;
   habitId: number;
@@ -107,7 +106,7 @@ export class Details {
     this.habitService.editHabit(
       this.habitId,
       this.applyForm.value.name ?? '',
-      this.applyForm.value.timesperinstance ?? 1,
+      Number(this.applyForm.value.timesperinstance) ?? 1,
       this.applyForm.value.frequency ?? 'daily',
       this.applyForm.value.description ?? '',
       (this.applyForm.value.tags ?? '')

@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { HabitInfo } from '../habit';
-import { Habit } from '../habit/habitthumbnail';
+import { Habit } from '../habit/habit';
 import { HabitService } from '../habit.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
@@ -89,7 +89,7 @@ export class Home {
   createHabit() {
     this.habitService.createHabit(
       this.applyForm.value.name ?? '',
-      this.applyForm.value.timesperinstance ?? 1,
+      Number(this.applyForm.value.timesperinstance) ?? 1,
       this.applyForm.value.frequency ?? 'daily',
       this.applyForm.value.description ?? '',
       this.applyForm.value.tags ?? '',
