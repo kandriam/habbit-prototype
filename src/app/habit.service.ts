@@ -24,6 +24,7 @@ export class HabitService {
     );
 
     let strid = id.toString();
+    let strtimes = timesperinstance.toString();
     fetch(`${this.url}/${id}`, {
       method: 'PUT',
       headers: {
@@ -32,7 +33,7 @@ export class HabitService {
       body: JSON.stringify({
       id: strid,
       name,
-      timesperinstance,
+      timesperinstance: strtimes,
       frequency,
       description,
       tags
@@ -49,6 +50,9 @@ export class HabitService {
     this.getAllHabits().then(habits => {
       const maxId = habits.length > 0 ? Math.max(...habits.map(h => h.id)) : 0;
       const newId = String(maxId + 1);
+      let strtimes = timesperinstance.toString();
+
+
       fetch(this.url, {
       method: 'POST',
       headers: {
@@ -57,7 +61,7 @@ export class HabitService {
       body: JSON.stringify({
         id: newId,
         name,
-        timesperinstance,
+        timesperinstance: strtimes,
         frequency,
         description,
         tags: Array.isArray(tags) ? tags : tags.split(',').map(t => t.trim())

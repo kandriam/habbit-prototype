@@ -30,7 +30,7 @@ import { HabitService } from '../habit.service';
       </div>
     </section>
   `,
-  styleUrls: ['../../styles.css', './habit.css'],
+  styleUrls: ['../../styles.css', './habitthumbnail.css'],
 })
 export class Habit {
   habitService: HabitService = inject(HabitService);

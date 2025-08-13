@@ -23,22 +23,12 @@
     {
       "id": "3",
       "name": "Teeth strip",
+      "timesperinstance": 1,
+      "frequency": "daily",
       "description": "1. Peel whitestrips from backing liner. 2. Apply gel side of strip to front teeth. Align straight edge of strip with gumline. Fold over teeth and press to secure. 3. After 30 minutes, peel strip from corner and pull gently across to ease removal. Rinse or brush to remove remaining gel.",
-      "timesperinstance": 1,
-      "frequency": "daily",
-      "isactive": true
-    },
-    {
-      "id": "4",
-      "name": "Go to LC gym",
       "tags": [
-        "Health",
-        "Fitness"
-      ],
-      "timesperinstance": 1,
-      "isactive": true,
-      "frequency": "daily",
-      "description": "Go to the gym and exercise. 1. Warm up for 10 minutes. 2. Treadmill. 3. Do strength training for 30 minutes. 4. Cool down for 10 minutes."
+        "Hygene"
+      ]
     },
     {
       "id": "5",
@@ -48,6 +38,17 @@
       "description": "250 words per page",
       "tags": [
         "Creativity"
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Go to gym",
+      "timesperinstance": 1,
+      "frequency": "daily",
+      "description": "Exercise\n20-30 min on treadmill\nSome arm exercise machine\nSome leg exercise machine\n10-20 min on treadmill",
+      "tags": [
+        "Fitness",
+        "Health"
       ]
     }
   ]
