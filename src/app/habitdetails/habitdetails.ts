@@ -10,39 +10,45 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   template: `
     <article class="habit-details">
       <div class="primary-container">
-
-      <div style="display: flex; justify-content: space-between;">
-        <h1>{{habit?.name}}</h1>
-        <div>
-          <button class="primary" (click)="deleteHabit(habit?.id)">Delete Habit</button>
-          <button class="primary" [routerLink]="['/']">Back</button>
+        <div style="display: flex; justify-content: space-between;">
+          <h1>{{habit?.name}}</h1>
+          <div>
+            <button class="primary" (click)="deleteHabit(habit?.id)">Delete Habit</button>
+            <button class="primary" [routerLink]="['/']">Back</button>
+          </div>
         </div>
       </div>
 
-      <section class="habit-details-section">
-        {{ habit?.timesperinstance }}
-        @if (habit?.timesperinstance == 1) {
-          time
-        } @else {
-          times
-        } {{ habit?.frequency }}
-      </section>
+      <div class="details-row">
+        <div class="secondary-container">
+          <section class="details-section">
+            {{ habit?.timesperinstance }}
+            @if (habit?.timesperinstance == 1) {
+              time
+            } @else {
+              times
+            } {{ habit?.frequency }}
+          </section>
 
-      @if (habit?.description) {
-        <section class="habit-details-section">
-          <p>{{ habit?.description }}</p>
-        </section>
-      }
+          @if (habit?.description) {
+            <section class="details-section">
+              <p>{{ habit?.description }}</p>
+            </section>
+          }
 
-      <section class="habit-details-section">
-        @for (tag of habit?.tags; track $index) {
-          <a class="habit-tags" href="#">{{ tag }}</a>
-        }
-      </section>
+          <section class="details-section">
+            @for (tag of habit?.tags; track $index) {
+              <a class="habit-tags" href="#">{{ tag }}</a>
+            }
+          </section>
+        </div>
+        <div class="secondary-container">
+          <p>sample</p>
+        </div>
       </div>
 
       <form [formGroup]="applyForm" (submit)="editHabit()">
-          <div class="secondary-container">
+          <div class="primary-container">
             <h3>Edit Habit</h3>
             <div>              
               <label for="habit-name">Habit Name:</label>
@@ -62,8 +68,8 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
             <br>
             <textarea name="habit-description" placeholder="Description (optional)" formControlName="description"></textarea>
             <div>
-            <label for="habit-tags">Tags (separated by commas):</label>
-            <input type="text" name="habit-tags" value={{habit?.tags}} formControlName="tags" autocomplete="off">
+              <label for="habit-tags">Tags (separated by commas):</label>
+              <input type="text" name="habit-tags" value={{habit?.tags}} formControlName="tags" autocomplete="off">
             </div>
             <button class="primary" type="submit">Save Habit</button>
           </div>

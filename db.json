@@ -13,12 +13,12 @@
     {
       "id": "2",
       "name": "Salt gargle",
+      "timesperinstance": 1,
+      "frequency": "daily",
+      "description": "Hot water, salt, gargle",
       "tags": [
         "Hygene"
-      ],
-      "timesperinstance": 1,
-      "isactive": true,
-      "frequency": "daily"
+      ]
     },
     {
       "id": "3",
@@ -31,14 +31,13 @@
     {
       "id": "4",
       "name": "Go to LC gym",
+      "timesperinstance": 1,
+      "frequency": "daily",
+      "description": "Go to the gym and exercise.\n1. Warm up for 10 minutes.\n2. Treadmill.\n3. Do strength training for 30 minutes.\n4. Cool down for 10 minutes.",
       "tags": [
         "Health",
         "Fitness"
-      ],
-      "timesperinstance": 1,
-      "isactive": true,
-      "frequency": "daily",
-      "description": "Go to the gym and exercise. 1. Warm up for 10 minutes. 2. Treadmill. 3. Do strength training for 30 minutes. 4. Cool down for 10 minutes."
+      ]
     },
     {
       "id": "5",
@@ -51,23 +50,23 @@
       ]
     },
     {
-      "id": "7",
-      "name": "Test habit 2",
-      "timesperinstance": 2,
+      "id": "6",
+      "name": "Pet cat",
+      "timesperinstance": 1,
       "frequency": "daily",
-      "description": "2",
+      "description": "Saka",
       "tags": [
-        "Test"
+        "Self care"
       ]
     },
     {
-      "id": "8",
-      "name": "Test habit 1",
-      "timesperinstance": 1,
+      "id": "7",
+      "name": "Pet cat",
+      "timesperinstance": 3,
       "frequency": "daily",
-      "description": "1",
+      "description": "Saka",
       "tags": [
-        "Test"
+        ""
       ]
     }
   ]

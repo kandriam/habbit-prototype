@@ -92,11 +92,21 @@ label:has(+ input:required)::after {
 }
 
 textarea {
-  width: 500px;
+  width: 90%;
+  /* width: fit-content; */
   height: 100px;
   border: solid 1px var(--g5-color);
   padding: 10px;
   border-radius: 8px;
+}
+
+aside {
+  width: 30%;
+  padding-left: 15px;
+  margin-left: 15px;
+  float: right;
+  font-style: italic;
+  background-color: lightgray;
 }
 
 .primary-container {
@@ -104,12 +114,13 @@ textarea {
   border-radius: 15px;
   padding: 10px;
   margin: 5px;
+  margin-block: 25px;
 }
 
 .secondary-container {
   background-color: var(--g1-color);
   border-radius: 15px;
   padding: 10px;
-  margin: 5px;
-  margin-block: 50px;
+  margin:5px;
+  width: 100%;
 }

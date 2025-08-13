@@ -6,9 +6,10 @@
   transition: box-shadow 0.5s; */
 }
 
-.habit-details-section {
-    color: var(--g5-color);
-    padding: 10px;
+.details-section {
+    /* padding: 10px; */
+    margin: 10px;
+    /* display: flex; */
 }
 
 .habit-tags::before {
@@ -38,23 +39,13 @@
     background-color: var(--g1-color);
 }
 
-.details a {
+.details-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .details a {
   padding-left: 5px;
   text-decoration: none;
   color: var(--primary-color);
-}
-
-.primary-container {
-  background-color: var(--g2-color);
-  border-radius: 15px;
-  padding: 10px;
-  margin: 5px;
-}
-
-.secondary-container {
-  background-color: var(--g1-color);
-  border-radius: 15px;
-  padding: 10px;
-  margin: 5px;
-  margin-block: 50px;
-}
+} */

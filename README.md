@@ -6,13 +6,12 @@ HOW RUN
 2. Go to http://localhost:4200/
 
 RoadMap (later to be own md)
+[x] Edit habits
 [x] Add habits
     - Generate unique id
     - post habit
 [x] Delete habits (waiting on add habits)
-
-
-Unordered Tasks
+[ ] Multiline descriptions
 [ ] Sort home view
 [ ] Track per day
     - Tracker with length of instancesperday
