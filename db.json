@@ -3,12 +3,12 @@
     {
       "id": "1",
       "name": "Brush teeth",
+      "timesperinstance": 3,
+      "frequency": "daily",
+      "description": "",
       "tags": [
         "Hygene"
-      ],
-      "timesperinstance": 2,
-      "isactive": true,
-      "frequency": "daily"
+      ]
     },
     {
       "id": "2",
@@ -51,23 +51,23 @@
       ]
     },
     {
-      "id": "6",
-      "name": "wer",
-      "timesperinstance": 1,
+      "id": "7",
+      "name": "Test habit 2",
+      "timesperinstance": 2,
       "frequency": "daily",
-      "description": "we",
+      "description": "2",
       "tags": [
-        "wew"
+        "Test"
       ]
     },
     {
-      "id": "7",
-      "name": "wer32322",
-      "timesperinstance": 2,
+      "id": "8",
+      "name": "Test habit 1",
+      "timesperinstance": 1,
       "frequency": "daily",
-      "description": "wrfw",
+      "description": "1",
       "tags": [
-        ""
+        "Test"
       ]
     }
   ]
