@@ -1,4 +1,4 @@
-RUN
+HOW RUN
 1. In terminal window, run
     ng serve
 2. In a separate terminal, run
@@ -6,10 +6,10 @@ RUN
 2. Go to http://localhost:4200/
 
 RoadMap (later to be own md)
-1. Add habits
+[x] Add habits
     - Generate unique id
     - post habit
-2. Delete habits (waiting on add habits)
+[x] Delete habits (waiting on add habits)
 
 
 Unordered Tasks
@@ -20,3 +20,7 @@ Unordered Tasks
     - user can +/- throughout the day
 [ ] Calendar and habit tracker (1 year)
 [ ] Every x days/weeks/months on x weekdays/dates
+
+Notes:
+- Why ids in json are strings and not numbers?
+    - Angular/HTTP seems to be converting numbers to strings when handling JSON responses. I have spent hours trying to dodge this with conversions, it has not worked yet.

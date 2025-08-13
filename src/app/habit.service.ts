@@ -23,13 +23,14 @@ export class HabitService {
       `Editing habit: ${id}, ${name}, ${timesperinstance}, ${frequency}, ${description}, ${tags.join(",")}`
     );
 
+    let strid = id.toString();
     fetch(`${this.url}/${id}`, {
       method: 'PUT',
       headers: {
       'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-      id: Number(id),
+      id: strid,
       name,
       timesperinstance,
       frequency,
@@ -47,7 +48,7 @@ export class HabitService {
     // Fetch all habits to determine the next id
     this.getAllHabits().then(habits => {
       const maxId = habits.length > 0 ? Math.max(...habits.map(h => h.id)) : 0;
-      const newId = maxId + 1;
+      const newId = String(maxId + 1);
       fetch(this.url, {
       method: 'POST',
       headers: {
