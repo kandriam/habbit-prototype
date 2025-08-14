@@ -46,7 +46,19 @@ export class Calendar {
 
     this.habitService.getHabitsById(this.habitId).then((habit) => {
       this.habit = habit;
+      this.loadcalendar();
     });
+  }
+
+  loadcalendar() {
+    console.log("load");
+    
+    this.habit?.calendar?.forEach( date =>{
+      // const d = date;
+      this.checkedDays.push(date);
+      document.getElementById(date)?.setAttribute("checked", "checked");
+      }
+    )
   }
 
   dayChecked(date: string) {
