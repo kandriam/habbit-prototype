@@ -7,7 +7,7 @@ export interface HabitInfo {
 
     timesperinstance: number;
 
-    calendar?: { [key: string]: boolean};
+    calendar?: string[];
     
     frequency?: 'daily' | 'weekly' | 'monthly';
     // Implement later
