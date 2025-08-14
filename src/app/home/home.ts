@@ -41,7 +41,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
           <h2>Habits</h2>
           <form>
             <input id="search-bar" type="text" placeholder="Filter by tag or name" (input)="filterResults(filter.value)" #filter />
-            <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
+            <a class="primary" type="button" (click)="filterResults(filter.value)">Search</a>
           </form>
         </section>
         <section class="results">
