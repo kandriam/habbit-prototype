@@ -18,12 +18,12 @@ import { HabitInfo } from '../habit';
           <th class="calen-month">{{month.slice(0,3)}}</th>
         }
       </tr>
-      @for(n of dates; track n) {
+      @for(d of dates; track d) {
         <tr>
-        <td class="calen-date">{{ n }}</td>
-        @for (month of months; track month) {
+        <td class="calen-date">{{ d }}</td>
+        @for (m of months; track m) {
           <td>
-            <input type="checkbox">
+            <input type="checkbox" id={{m}}{{d}} (click)="dayChecked((m+d))">
           </td>
         }
         </tr>
@@ -37,7 +37,7 @@ export class Calendar {
   habitService: HabitService = inject(HabitService);
   habit: HabitInfo | undefined;
   habitId: number;
-  dates: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 18, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+  dates: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
   months: string[] = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   
   constructor() {
@@ -46,6 +46,12 @@ export class Calendar {
     this.habitService.getHabitsById(this.habitId).then((habit) => {
       this.habit = habit;
     });
+  }
+
+  dayChecked(date: string) {
+    var element = <HTMLInputElement> document.getElementById(date);
+    var isChecked = element.checked;
+    console.log(date, isChecked)
   }
 }
 
