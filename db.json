@@ -10,7 +10,11 @@
       ],
       "tags": [
         "Hygene"
-      ]
+      ],
+      "calendar": {
+        "January1": true,
+        "January2": false
+      }
     },
     {
       "id": "2",

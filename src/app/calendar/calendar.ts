@@ -61,7 +61,16 @@ export class Calendar {
     )
     // console.log(this.checkedDays);
     console.log("Sent");
-    this.habitService.updateHabitCalendar(this.habitId, this.checkedDays);
+        
+    // this.habitService.updateHabitCalendar(this.habitId, habitname, this.checkedDays);
+    this.habitService.updateHabitCalendar(
+      this.habitId,
+      this.habit?.name ?? '',
+      this.habit?.timesperinstance ?? 1,
+      this.habit?.frequency ??'daily',
+      this.habit?.description ?? [],
+      this.habit?.tags ?? [],
+      this.checkedDays);
   }
 }
 

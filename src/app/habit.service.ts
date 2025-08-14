@@ -40,8 +40,31 @@ export class HabitService {
     });
   }
 
-  updateHabitCalendar(id:number, calendar: Map<string, boolean>) {
-    console.log(calendar, calendar.size);
+  updateHabitCalendar(id:number, name: string, timesperinstance: number, frequency: string, description: string[] | undefined, tags: string[], calendar: Map<string, boolean>): void {
+  // updateHabitCalendar(id:number, name: string, calendar:Map<string,boolean>){
+    console.log(
+      // `Updating habit: ${id}, ${name}, ${timesperinstance}, ${frequency}, ${description}, ${tags.join(",")}`
+      "Calendar update:", id, calendar
+    );
+    
+    const jsonobj = Object.fromEntries(calendar.entries())
+    
+    let strid = id.toString();
+    fetch(`${this.url}/${id}`, {
+      method: 'PUT',
+      headers: {
+      'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+      id: strid,
+      name,
+      timesperinstance,
+      frequency,
+      description,
+      tags,
+      calendar: jsonobj
+      })
+    });
   }
 
   createHabit(name: string, timesperinstance: number | string, frequency: string, description: string, tags: string): void {
@@ -67,6 +90,7 @@ export class HabitService {
         // description,
         description: description.split('\n'), // Multiple lines
         tags: tags.split(',').map((tag: string) => tag.trim()).filter((tag: string) => tag.length > 0),
+        calendar:{}
       })
       });
     });
