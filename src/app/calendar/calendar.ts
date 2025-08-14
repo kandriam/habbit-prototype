@@ -39,7 +39,8 @@ export class Calendar {
   habitId: number;
   dates: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
   months: string[] = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  
+  checkedDays: Map<string,boolean> = new Map();
+
   constructor() {
     this.habitId = Number(this.route.snapshot.params['id']);
 
@@ -52,6 +53,13 @@ export class Calendar {
     var element = <HTMLInputElement> document.getElementById(date);
     var isChecked = element.checked;
     console.log(date, isChecked)
+    if (isChecked) {
+      this.checkedDays.set(date, true);
+    }
+    else (
+      this.checkedDays.set(date, false)
+    )
+    console.log(this.checkedDays);
   }
 }
 
