@@ -9,13 +9,11 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   imports: [RouterLink, RouterOutlet, ReactiveFormsModule],
   template: `
     <article class="habit-details">
-      <div class="primary-container">
-        <div style="display: flex; justify-content: space-between;">
-          <h1>{{habit?.name}}</h1>
-          <div>
-            <button class="primary" (click)="deleteHabit(habit?.id)">Delete Habit</button>
-            <button class="primary" [routerLink]="['/']">Back</button>
-          </div>
+      <div class="primary-container" style="display: flex; justify-content: space-between;">
+        <h1>{{habit?.name}}</h1>
+        <div class="details-row">
+          <a class="primary" (click)="deleteHabit(habit?.id)">Delete Habit</a>
+          <a class="primary" [routerLink]="['/']">Back</a>
         </div>
       </div>
 
@@ -45,7 +43,9 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
           </section>
         </div>
         <div class="secondary-container">
-          <p>sample</p>
+          <section class="details-section">
+            <p>sample</p>
+          </section>
         </div>
       </div>
 

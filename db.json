@@ -5,7 +5,9 @@
       "name": "Brush teeth",
       "timesperinstance": 3,
       "frequency": "daily",
-      "description": [""],
+      "description": [
+        ""
+      ],
       "tags": [
         "Hygene"
       ]
@@ -15,7 +17,9 @@
       "name": "Salt gargle",
       "timesperinstance": 1,
       "frequency": "daily",
-      "description": ["Hot water, salt, gargle"],
+      "description": [
+        "Hot water, salt, gargle"
+      ],
       "tags": [
         "Hygene"
       ]
@@ -23,23 +27,28 @@
     {
       "id": "3",
       "name": "Teeth strip",
-      "description": ["1. Peel whitestrips from backing liner.",
+      "description": [
+        "1. Peel whitestrips from backing liner.",
         "2. Apply gel side of strip to front teeth. Align straight edge of strip with gumline. Fold over teeth and press to secure.",
         "3. After 30 minutes, peel strip from corner and pull gently across to ease removal. Rinse or brush to remove remaining gel."
-        ],
+      ],
       "timesperinstance": 1,
       "frequency": "daily",
       "isactive": true
     },
     {
       "id": "4",
-      "name": "Go to LC gym",
+      "name": "Gym",
       "timesperinstance": 1,
       "frequency": "daily",
-      "description": ["Go to the gym and exercise.",
+      "description": [
+        "Go to the gym and exercise.",
         "1. Warm up for 10 minutes.",
-        "2. Treadmill.\n3. Do strength training for 30 minutes.",
-        "4. Cool down for 10 minutes."],
+        "2. Treadmill.",
+        "3. Do strength training for 30 minutes.",
+        "4. Cool down for 10 minutes.",
+        "5. Cool down stretches"
+      ],
       "tags": [
         "Health",
         "Fitness"
@@ -50,7 +59,9 @@
       "name": "Write at least a page",
       "timesperinstance": 1,
       "frequency": "daily",
-      "description": ["250 words per page"],
+      "description": [
+        "250 words per page"
+      ],
       "tags": [
         "Creativity"
       ]
@@ -60,7 +71,9 @@
       "name": "read something",
       "timesperinstance": 1,
       "frequency": "daily",
-      "description": ["news and book"],
+      "description": [
+        "news and book"
+      ],
       "tags": [
         "Self care",
         "intellect"

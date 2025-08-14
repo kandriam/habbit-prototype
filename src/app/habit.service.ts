@@ -34,7 +34,7 @@ export class HabitService {
       name,
       timesperinstance,
       frequency,
-      description,
+      description: description.split('\n'), // Multiple lines
       tags
       })
     });
@@ -66,7 +66,6 @@ export class HabitService {
       })
       });
     });
-    // window.location.reload();
   }
 
   deleteHabit(id: number) {
@@ -77,6 +76,5 @@ export class HabitService {
       }
     });
     console.log(`habit: ${id} deleted`);
-
   }
 }

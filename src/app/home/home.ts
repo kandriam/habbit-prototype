@@ -33,7 +33,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
             <label for="habit-tags">Tags (separated by commas):</label>
             <input type="text" name="habit-tags" placeholder="Tags (separated by commas)" formControlName="tags" autocomplete="off">
             </div>
-            <button class="primary" type="submit">Add Habit</button>
+            <a class="primary" type="submit">Add Habit</a>
           </div>
         </form>
 

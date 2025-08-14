@@ -37,14 +37,13 @@ a {
   text-decoration: underline var(--g3-color);
 }
 
-button.primary {
+.primary {
   border: solid 1px var(--g5-color);
   border-radius: 10px;
-  padding: 10px;
+  text-decoration: none;
+  padding: 5px;
   margin: 5px;
 
-  text-decoration: none;
-  font-weight: bolder;
   color: var(--g5-color);
   
   background-color: var(--g2-color);
@@ -53,11 +52,11 @@ button.primary {
   transition: box-shadow 0.5s;
 }
 
-button.primary:hover {
+.primary:hover {
     box-shadow: 0px 5px 5px var(--g4-color);
 }
 
-button.primary:active {
+.primary:active {
     background-color: var(--g3-color);
     box-shadow: 0px 5px 5px var(--g4-color);
 }
@@ -112,15 +111,21 @@ aside {
 .primary-container {
   background-color: var(--g2-color);
   border-radius: 15px;
-  padding: 10px;
-  margin: 5px;
-  margin-block: 25px;
+  padding: 15px;
+  margin: 15px;
 }
 
 .secondary-container {
   background-color: var(--g1-color);
   border-radius: 15px;
   padding: 10px;
-  margin:5px;
+  margin:10px;
   width: 100%;
+}
+
+select {
+  border: solid 1px var(--g5-color);
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 5px;
 }
