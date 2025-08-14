@@ -9,46 +9,46 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   imports: [ Habit, ReactiveFormsModule ],
   template: `
     <section>
-        <form [formGroup]="applyForm" (submit)="createHabit()">
-          <div class="primary-container">
-            <h3>Add New Habit</h3>
-            <div>              
-              <label for="habit-name">Habit Name:</label>
-              <input type="text" name="habit-name" placeholder="Habit name" formControlName="name" autocomplete="off" required>
-            </div>
-            <div>
-              <input type="number" name="habit-timesperinstance" value=1 formControlName="timesperinstance">
-              <label for="habit-timesperinstance">time(s) per</label>
-              <select name="habit-frequency" formControlName="frequency">
-                <option value="daily">Day</option>
-                <option value="weekly">Week</option>
-                <option value="monthly">Month</option>
-              </select>
-            </div>
+      <form [formGroup]="applyForm" (submit)="createHabit()">
+        <div class="primary-container">
+          <h3>Add New Habit</h3>
+          <div>              
+            <label for="habit-name">Habit Name:</label>
+            <input type="text" name="habit-name" placeholder="Habit name" formControlName="name" autocomplete="off" required>
+          </div>
+          <div>
+            <input type="number" name="habit-timesperinstance" value=1 formControlName="timesperinstance">
+            <label for="habit-timesperinstance">time(s) per</label>
+            <select name="habit-frequency" formControlName="frequency">
+              <option value="daily">Day</option>
+              <option value="weekly">Week</option>
+              <option value="monthly">Month</option>
+            </select>
+          </div>
 
-            <label for="habit-description">Description:</label>
-            <br>
-            <textarea name="habit-description" placeholder="Description (optional)" formControlName="description"></textarea>
-            <div>
+          <label for="habit-description">Description:</label>
+          <br>
+          <textarea name="habit-description" placeholder="Description (optional)" formControlName="description"></textarea>
+          <div>
             <label for="habit-tags">Tags (separated by commas):</label>
             <input type="text" name="habit-tags" placeholder="Tags (separated by commas)" formControlName="tags" autocomplete="off">
-            </div>
-            <a class="primary" type="submit">Add Habit</a>
           </div>
-        </form>
+          <button class="primary" type="submit">Add Habit</button>
+        </div>
+      </form>
 
-        <section>
-          <h2>Habits</h2>
-          <form>
-            <input id="search-bar" type="text" placeholder="Filter by tag or name" (input)="filterResults(filter.value)" #filter />
-            <a class="primary" type="button" (click)="filterResults(filter.value)">Search</a>
-          </form>
-        </section>
-        <section class="results">
-          @for(habit of filteredHabitList; track $index) {
-            <app-habit [habit]="habit"></app-habit>
-          }
-        </section>
+      <section>
+        <h2>Habits</h2>
+        <form>
+          <input id="search-bar" type="text" placeholder="Filter by tag or name" (input)="filterResults(filter.value)" #filter />
+          <a class="primary" type="button" (click)="filterResults(filter.value)">Search</a>
+        </form>
+      </section>
+      <section class="results">
+        @for(habit of filteredHabitList; track $index) {
+          <app-habit [habit]="habit"></app-habit>
+        }
+      </section>
     </section>
   `,
   styleUrls: ['../../styles.css', './home.css'],

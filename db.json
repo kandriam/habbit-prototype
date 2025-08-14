@@ -78,6 +78,30 @@
         "Self care",
         "intellect"
       ]
+    },
+    {
+      "id": "7",
+      "name": "habit",
+      "timesperinstance": 1,
+      "frequency": "daily",
+      "description": [
+        "habrts"
+      ],
+      "tags": []
+    },
+    {
+      "id": "8",
+      "name": "bne",
+      "timesperinstance": 1,
+      "frequency": "daily",
+      "description": [
+        "balls",
+        "nuts"
+      ],
+      "tags": [
+        "balls",
+        "nuts"
+      ]
     }
   ]
 }

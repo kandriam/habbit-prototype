@@ -23,7 +23,7 @@ import { HabitService } from '../habit.service';
           <p> {{ habit().timesperinstance }} times per day </p>
         }
       </div>
-      <div class="thumbnail-section">
+      <div class="tag-section">
       @for(tag of habit().tags; track $index) {
         <a class="habit-tags" (click)="searchByTag(tag)" >{{ tag }}</a>
       }
