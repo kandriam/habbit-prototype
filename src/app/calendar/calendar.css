@@ -1,0 +1,40 @@
+table {
+    background-color: var(--g1-color);
+    border: 1px solid var(--g4-color);
+    border-collapse: collapse;
+
+}
+
+table, th, td {
+    border: 1px solid var(--g3-color);  
+    color: var(--g5-color);
+}
+
+table tr:nth-child(odd) {
+    background-color: var(--g2-color);
+
+}
+
+.calen-date, .calen-month {
+    padding: 3px;
+    font-size: small;
+}
+
+.calen-month {
+    text-align: center;
+}
+
+.calen-date {
+    text-align: center;
+}
+
+input[type="checkbox"] {
+    /* position: absolute; */
+    accent-color: var(--g3-color);
+    height: 20px;
+    width: 20px;
+}
+
+input[type="checkbox"] :hover {
+    box-shadow: 0px 5px 5px var(--g4-color);
+}

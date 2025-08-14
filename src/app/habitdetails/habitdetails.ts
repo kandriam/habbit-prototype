@@ -3,10 +3,11 @@ import { RouterLink, RouterOutlet, ActivatedRoute } from '@angular/router';
 import { HabitService } from '../habit.service';
 import { HabitInfo } from '../habit';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Calendar } from '../calendar/calendar';
 
 @Component({
   selector: 'app-habitdetails',
-  imports: [RouterLink, RouterOutlet, ReactiveFormsModule],
+  imports: [RouterLink, RouterOutlet, ReactiveFormsModule, Calendar],
   template: `
     <article class="habit-details">
       <div class="primary-container" style="display: flex; justify-content: space-between;">
@@ -44,7 +45,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
         </div>
         <div class="secondary-container">
           <section class="details-section">
-            <p>sample</p>
+            <app-calendar></app-calendar>
           </section>
         </div>
       </div>

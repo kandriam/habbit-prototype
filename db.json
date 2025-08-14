@@ -88,20 +88,6 @@
         "habrts"
       ],
       "tags": []
-    },
-    {
-      "id": "8",
-      "name": "bne",
-      "timesperinstance": 1,
-      "frequency": "daily",
-      "description": [
-        "balls",
-        "nuts"
-      ],
-      "tags": [
-        "balls",
-        "nuts"
-      ]
     }
   ]
 }
