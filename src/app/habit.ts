@@ -7,12 +7,13 @@ export interface HabitInfo {
 
     timesperinstance: number;
 
-    startdate?: Date;
-    enddate?: Date;
-    ends?: boolean;
+    calendar?: { [key: string]: boolean};
     
     frequency?: 'daily' | 'weekly' | 'monthly';
     // Implement later
+    startdate?: Date;
+    enddate?: Date;
+    ends?: boolean;
     everyxdays?: number; // e.g., every 2 days, every 3 weeks
     everyxweeks?: number; // e.g., every 2 weeks
     daysofweek?: string[]; // e.g., ['Monday', 'Wednesday', 'Friday']

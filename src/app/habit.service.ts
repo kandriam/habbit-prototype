@@ -40,6 +40,10 @@ export class HabitService {
     });
   }
 
+  updateHabitCalendar(id:number, calendar: Map<string, boolean>) {
+    console.log(calendar, calendar.size);
+  }
+
   createHabit(name: string, timesperinstance: number | string, frequency: string, description: string, tags: string): void {
     console.log(
       `Creating habit: ${name}, ${timesperinstance}, ${frequency}, ${description}, ${tags}`

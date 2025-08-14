@@ -52,14 +52,16 @@ export class Calendar {
   dayChecked(date: string) {
     var element = <HTMLInputElement> document.getElementById(date);
     var isChecked = element.checked;
-    console.log(date, isChecked)
+    // console.log(date, isChecked)
     if (isChecked) {
       this.checkedDays.set(date, true);
     }
     else (
       this.checkedDays.set(date, false)
     )
-    console.log(this.checkedDays);
+    // console.log(this.checkedDays);
+    console.log("Sent");
+    this.habitService.updateHabitCalendar(this.habitId, this.checkedDays);
   }
 }
 
