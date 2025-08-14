@@ -18,6 +18,7 @@ import {RouterModule} from '@angular/router';
   `,
   styleUrls: ['../styles.css', './app.css'],
 })
+
 export class App {
   title = 'habbit';
 }
@@ -25,6 +26,7 @@ export class App {
 window.onload = () => {
     displayDate();
 }
+
 function displayDate() {
     let months = ["January", "February","March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     let date =  new Date();

@@ -1,7 +1,7 @@
 export interface HabitInfo {
     id: number;
     name: string;
-    description?: string;
+    description?: string[];
 
     tags?: string[];
 

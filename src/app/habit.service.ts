@@ -40,14 +40,14 @@ export class HabitService {
     });
   }
 
-  createHabit(name: string, timesperinstance: number, frequency: string, description: string, tags: string): void {
+  createHabit(name: string, timesperinstance: number | string, frequency: string, description: string, tags: string): void {
     console.log(
       `Creating habit: ${name}, ${timesperinstance}, ${frequency}, ${description}, ${tags}`
     );
 
-    // Fetch all habits to determine the next id
     this.getAllHabits().then(habits => {
       console.log(habits.length);
+      // determine next id
       const maxId = habits.length > 0 ? Math.max(...habits.map(h => h.id)) : 0;
       const newId = String(maxId + 1);
       fetch(this.url, {
@@ -60,18 +60,14 @@ export class HabitService {
         name,
         timesperinstance,
         frequency,
-        description,
+        // description,
+        description: description.split('\n'), // Multiple lines
         tags: tags.split(',').map((tag: string) => tag.trim()).filter((tag: string) => tag.length > 0),
-        // tags: Array.isArray(tags) ? tags : tags.split(',').map(t => t.trim())
       })
       });
     });
-    window.location.reload();
+    // window.location.reload();
   }
-  // (this.applyForm.value.tags ?? '')
-        // .split(',')
-        // .map((tag: string) => tag.trim())
-        // .filter((tag: string) => tag.length > 0),
 
   deleteHabit(id: number) {
     fetch(`${this.url}/${id}`, {

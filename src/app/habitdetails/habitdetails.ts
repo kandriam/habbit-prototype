@@ -32,7 +32,9 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
           @if (habit?.description) {
             <section class="details-section">
-              <p>{{ habit?.description }}</p>
+            @for (desc of habit?.description; track $index) {
+              <p>{{ desc }}</p>
+            }
             </section>
           }
 
@@ -66,7 +68,8 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
             <label for="habit-description">Description:</label>
             <br>
-            <textarea name="habit-description" placeholder="Description (optional)" formControlName="description"></textarea>
+            <textarea name="habit-description" placeholder="Description (optional)" formControlName="description">
+            </textarea>
             <div>
               <label for="habit-tags">Tags (separated by commas):</label>
               <input type="text" name="habit-tags" value={{habit?.tags}} formControlName="tags" autocomplete="off">
@@ -95,13 +98,14 @@ export class Details {
       description: new FormControl(''),
       tags: new FormControl(''),
     });
+
     this.habitService.getHabitsById(this.habitId).then((habit) => {
       this.habit = habit;
       this.applyForm.patchValue({
         name: habit?.name ?? '',
         timesperinstance: habit?.timesperinstance ?? 1,
         frequency: habit?.frequency ?? 'daily',
-        description: habit?.description ?? '',
+        description: (habit?.description ?? []).join('\n'),
         tags: (habit?.tags ?? []).join(', ')
       });
     });

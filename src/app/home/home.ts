@@ -94,6 +94,7 @@ export class Home {
       this.applyForm.value.description ?? '',
       this.applyForm.value.tags ?? '',
     );
+    window.location.reload();
   }
 }
 
