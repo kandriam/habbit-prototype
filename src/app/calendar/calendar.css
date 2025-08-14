@@ -11,8 +11,7 @@ table, th, td {
 }
 
 table tr:nth-child(odd) {
-    background-color: var(--g2-color);
-
+    background-color: color-mix(in srgb, var(--g1-color) 50%, var(--g2-color) 50%);
 }
 
 .calen-date, .calen-month {
@@ -26,6 +25,7 @@ table tr:nth-child(odd) {
 
 .calen-date {
     text-align: center;
+    font-weight: bold;
 }
 
 input[type="checkbox"] {
