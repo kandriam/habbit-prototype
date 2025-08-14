@@ -8,27 +8,29 @@ import { HabitInfo } from '../habit';
   selector: 'app-calendar',
   imports: [],
   template: `
-    <table class="calendar">
-      <tr>
-        <th colspan=13> {{habit?.name}} </th>
-      </tr>
-      <tr>
-        <th></th>
-        @for (month of months; track month) {
-          <th class="calen-month">{{month.slice(0,3)}}</th>
-        }
-      </tr>
-      @for(d of dates; track d) {
+    <div class="secondary-container">
+      <table class="calendar">
         <tr>
-        <td class="calen-date">{{ d }}</td>
-        @for (m of months; track m) {
-          <td>
-            <input type="checkbox" id={{m}}{{d}} (click)="dayChecked((m+d))">
-          </td>
-        }
+          <th colspan=13> {{habit?.name}} </th>
         </tr>
-      }
-    </table>
+        <tr>
+          <th></th>
+          @for (month of months; track month) {
+            <th class="calen-month">{{month.slice(0,3)}}</th>
+          }
+        </tr>
+        @for(d of dates; track d) {
+          <tr>
+          <td class="calen-date">{{ d }}</td>
+          @for (m of months; track m) {
+            <td>
+              <input type="checkbox" id={{m}}{{d}} (click)="dayChecked((m+d))">
+            </td>
+          }
+          </tr>
+        }
+      </table>
+    </div>
     `,
   styleUrls: ['../../styles.css', './calendar.css'],
 })

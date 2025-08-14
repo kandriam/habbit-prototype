@@ -8,7 +8,7 @@ import { HabitService } from '../habit.service';
   standalone: true,
   imports: [RouterLink, RouterOutlet],
   template: `
-    <section class="habit-thumbnail">
+    <section class="habit-thumbnail" [routerLink]="['/details', habit().id]">
       <div class="thumbnail-section">
         <h3>{{ habit().name }}</h3>
         <div>

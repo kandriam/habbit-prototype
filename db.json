@@ -12,14 +12,9 @@
         "Hygene"
       ],
       "calendar": [
-        "August14",
-        "August13",
-        "August12",
-        "August10",
-        "August9",
         "February1",
-        "April1",
-        "May1"
+        "February2",
+        "February3"
       ]
     },
     {
@@ -37,14 +32,15 @@
     {
       "id": "3",
       "name": "Teeth strip",
+      "timesperinstance": 1,
+      "frequency": "daily",
       "description": [
         "1. Peel whitestrips from backing liner.",
         "2. Apply gel side of strip to front teeth. Align straight edge of strip with gumline. Fold over teeth and press to secure.",
         "3. After 30 minutes, peel strip from corner and pull gently across to ease removal. Rinse or brush to remove remaining gel."
       ],
-      "timesperinstance": 1,
-      "frequency": "daily",
-      "isactive": true
+      "tags": [],
+      "calendar": []
     },
     {
       "id": "4",

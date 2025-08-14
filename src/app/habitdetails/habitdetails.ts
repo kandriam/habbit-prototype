@@ -9,75 +9,71 @@ import { Calendar } from '../calendar/calendar';
   selector: 'app-habitdetails',
   imports: [RouterLink, RouterOutlet, ReactiveFormsModule, Calendar],
   template: `
-    <article class="habit-details">
-      <div class="primary-container" style="display: flex; justify-content: space-between;">
-        <h1>{{habit?.name}}</h1>
-        <div class="details-row">
-          <a class="primary" (click)="deleteHabit(habit?.id)">Delete Habit</a>
-          <a class="primary" [routerLink]="['/']">Back</a>
-        </div>
-      </div>
-
+    <div class="primary-container" style="display: flex; justify-content: space-between;">
+      <h1>{{habit?.name}}</h1>
       <div class="details-row">
-        <div class="secondary-container">
-          <section class="details-section">
+        <a class="primary" (click)="deleteHabit(habit?.id)">Delete Habit</a>
+        <a class="primary" [routerLink]="['/']">Back</a>
+      </div>
+    </div>
+    <article>
+      <div class="details-row">
+        <div id="content-container" class="secondary-container">
+          <div class="details-section">
             {{ habit?.timesperinstance }}
             @if (habit?.timesperinstance == 1) {
               time
             } @else {
               times
             } {{ habit?.frequency }}
-          </section>
+          </div>
 
           @if (habit?.description) {
-            <section class="details-section">
+            <div class="details-section">
             @for (desc of habit?.description; track $index) {
+              <div class="desc-section">
               <p>{{ desc }}</p>
+              </div>
             }
-            </section>
+            </div>
           }
 
-          <section class="details-section">
+          <div class="details-section">
             @for (tag of habit?.tags; track $index) {
               <a class="habit-tags" (click)="searchByTag(tag)">{{ tag }}</a>
             }
-          </section>
+          </div>
         </div>
-        <div class="secondary-container">
-          <section class="details-section">
-            <app-calendar></app-calendar>
-          </section>
-        </div>
+        <app-calendar></app-calendar>
       </div>
 
-      <form [formGroup]="applyForm" (submit)="editHabit()">
-          <div class="primary-container">
-            <h3>Edit Habit</h3>
-            <div>              
-              <label for="habit-name">Habit Name:</label>
-              <input type="text" name="habit-name" value={{habit?.name}} formControlName="name" autocomplete="off" required>
-            </div>
-            <div>
-              <input type="number" name="habit-timesperinstance" value={{habit?.timesperinstance}} formControlName="timesperinstance">
-              <label for="habit-timesperinstance">time(s) per</label>
-              <select name="habit-frequency" formControlName="frequency">
-                <option value="daily" selected="selected">Day</option>
-                <option value="weekly">Week</option>
-                <option value="monthly">Month</option>
-              </select>
-            </div>
-
-            <label for="habit-description">Description:</label>
-            <br>
-            <textarea name="habit-description" placeholder="Description (optional)" formControlName="description">
-            </textarea>
-            <div>
-              <label for="habit-tags">Tags (separated by commas):</label>
-              <input type="text" name="habit-tags" value={{habit?.tags}} formControlName="tags" autocomplete="off">
-            </div>
-            <button class="primary" type="submit">Save Habit</button>
+      <div id="edit-habit" class="primary-container">
+        <form [formGroup]="applyForm" (submit)="editHabit()">
+          <h3>Edit Habit</h3>
+          <div>              
+            <label for="habit-name">Habit Name:</label>
+            <input type="text" name="habit-name" value={{habit?.name}} formControlName="name" autocomplete="off" required>
           </div>
+          <div>
+            <input type="number" name="habit-timesperinstance" value={{habit?.timesperinstance}} formControlName="timesperinstance">
+            <label for="habit-timesperinstance">time(s) per</label>
+            <select name="habit-frequency" formControlName="frequency">
+              <option value="daily" selected="selected">Day</option>
+              <option value="weekly">Week</option>
+              <option value="monthly">Month</option>
+            </select>
+          </div>
+
+          <label for="habit-description">Description:</label>
+          <textarea name="habit-description" placeholder="Description (optional)" formControlName="description">
+          </textarea>
+          <div>
+            <label for="habit-tags">Tags (separated by commas):</label>
+            <input type="text" name="habit-tags" value={{habit?.tags}} formControlName="tags" autocomplete="off">
+          </div>
+          <button class="primary" type="submit">Save Habit</button>
         </form>
+      </div>
     </article>
   `,
   styleUrls: [ '../../styles.css', './habitdetails.css'],

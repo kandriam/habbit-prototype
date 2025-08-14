@@ -1,16 +1,10 @@
-.habit-details {
-  /* background: var(--g3-color); */
-  border-radius: 30px;
-  padding: 10px;
-  /* transition: background-color 0.5s;
-  transition: box-shadow 0.5s; */
-}
-
 .details-section {
-    /* padding: 10px; */
-    margin-inline: 10px;
-    margin-block: 20px;
-    /* display: flex; */
+    padding: 10px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    /* background-color: color-mix(in srgb, var(--g1-color) 75%, var(--g2-color) 25%); */
+    border: 1px solid var(--g2-color);
 }
 
 .habit-tags::before {
@@ -43,4 +37,11 @@
 .details-row {
   display: flex;
   justify-content: space-between;
+}
+
+.desc-section {
+  margin-block: 5px;
+  padding: 5px;
+  border: 1px solid var(--g2-color);
+  border-radius: 5px;
 }
