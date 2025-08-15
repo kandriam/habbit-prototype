@@ -2,6 +2,7 @@ table {
     /* border-radius: 15px; */
     padding: 1px;
     table-layout: fixed;
+    /* border-collapse: collapse; */
 }
 
 table, th, td {
@@ -11,11 +12,15 @@ table, th, td {
 }
 
 td {
-    border: none;
+    border: 1px solid var(--g1-color);
+    /* border: 3px solid color-mix(in srgb, var(--g1-color) 50%, var(--g2-color) 50%); */
+    border-radius: 0;
+
 }
 
 th {
     background-color: var(--g2-color);
+    /* font-size: large; */
     /* border-radius: 5px; */
 }
 table tr:nth-child(odd) {

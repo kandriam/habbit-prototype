@@ -7,12 +7,11 @@
       "timesperinstance": 3,
       "frequency": "daily",
       "description": [
-        "Sing the abcs"
+        "sing abcs"
       ],
       "tags": [
         "Hygene"
-      ],
-      "calendar": []
+      ]
     },
     {
       "id": "2",
@@ -46,8 +45,8 @@
       "id": "4",
       "name": "Gym",
       "timesdone": 0,
-      "timesperinstance": 1,
-      "frequency": "daily",
+      "timesperinstance": 5,
+      "frequency": "weekly",
       "description": [
         "Go to the gym and exercise. Remember water bottle",
         "1. Warm up for 10 minutes.",
@@ -59,7 +58,8 @@
       "tags": [
         "Health",
         "Fitness"
-      ]
+      ],
+      "calendar": []
     },
     {
       "id": "6",
@@ -84,15 +84,15 @@
         "htfdg"
       ],
       "tags": [
-        "a fd",
-        "sdf",
-        "ds af",
-        "fsda",
+        "sadfjk",
+        "dsafhbds",
+        "sdaf",
         "f",
-        "sdafdd",
-        "ds af"
-      ],
-      "calendar": {}
+        "sa",
+        "f",
+        "sa f",
+        "d"
+      ]
     },
     {
       "id": "8",
@@ -101,22 +101,9 @@
       "timesperinstance": 1,
       "frequency": "daily",
       "description": [
-        "dfsf"
+        ""
       ],
-      "tags": [],
-      "calendar": {}
-    },
-    {
-      "id": "9",
-      "name": "safdsaf",
-      "timesdone": 0,
-      "timesperinstance": 1,
-      "frequency": "daily",
-      "description": [
-        "asfd"
-      ],
-      "tags": [],
-      "calendar": {}
+      "tags": []
     }
   ]
 }

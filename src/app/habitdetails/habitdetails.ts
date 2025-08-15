@@ -17,15 +17,18 @@ import { Calendar } from '../calendar/calendar';
       </div>
     </div>
     <article>
+
       <div class="details-row">
         <div id="content-container" class="secondary-container">
+
           <div class="details-section">
-            {{habit?.name}} <b>{{ habit?.timesperinstance }} </b>
+            {{habit?.name}} {{ habit?.timesperinstance }} 
             @if (habit?.timesperinstance == 1) {
               time
             } @else {
               times
             } {{ habit?.frequency }}
+            <div class="desc-section">
             @if (habit?.timesperinstance != 1) {
               <div class="details-row">
                 <input type="range" min=0 max={{habit?.timesperinstance}} value={{habit?.timesdone}} class="slider" id="progress-tracker" (input)="updateTracker()">
@@ -35,22 +38,27 @@ import { Calendar } from '../calendar/calendar';
                 <label class="progress-text" id="progress-numerator">{{habit?.timesdone}}/{{habit?.timesperinstance}} </label>
               </div>
             }
+            </div>
           </div>
 
-          @if (habit?.description) {
+          @if (!(habit?.description?.length === 0)) {
+            <h3>Description</h3>
             <div class="details-section">
-            @for (desc of habit?.description; track $index) {
-              <div class="desc-section">
-              <p>{{ desc }}</p>
-              </div>
-            }
+              @for (desc of habit?.description; track $index) {
+                <div class="desc-section">
+                <p>{{ desc }}</p>
+                </div>
+              }
             </div>
           }
 
+          <h3>Tags</h3>
           <div class="details-section">
+            <div class="tag-section">
             @for (tag of habit?.tags; track $index) {
               <a class="habit-tags" (click)="searchByTag(tag)">{{ tag }}</a>
             }
+            </div>
           </div>
         </div>
         <app-calendar></app-calendar>
@@ -58,7 +66,7 @@ import { Calendar } from '../calendar/calendar';
 
       <div id="edit-habit" class="primary-container">
         <form [formGroup]="applyForm" (submit)="editHabit()">
-          <h3>Edit Habit</h3>
+          <h2>Edit Habit</h2>
           <div>              
             <label for="habit-name">Habit Name:</label>
             <input type="text" name="habit-name" value={{habit?.name}} formControlName="name" autocomplete="off" required>
