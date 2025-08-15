@@ -26,6 +26,14 @@ import { Calendar } from '../calendar/calendar';
             } @else {
               times
             } {{ habit?.frequency }}
+
+            @if (habit?.timesperinstance != 1) {
+              <p></p>
+              <div class="slidecontainer">
+                <input type="range" min=0 max={{habit?.timesperinstance}} value=5 class="slider" id="progress-tracker" (input)="updateTracker()">
+              </div>
+              <p> <label id="progress-numerator">x</label> / <label>{{habit?.timesperinstance}} </label></p>
+            }
           </div>
 
           @if (habit?.description) {
@@ -96,6 +104,7 @@ export class Details {
       tags: new FormControl(''),
     });
 
+
     this.habitService.getHabitsById(this.habitId).then((habit) => {
       this.habit = habit;
       this.applyForm.patchValue({
@@ -106,6 +115,14 @@ export class Details {
         tags: (habit?.tags ?? []).join(', ')
       });
     });
+  }
+
+  
+
+  updateTracker() {
+    var slider = <HTMLInputElement> document.getElementById("progress-tracker");
+    (document.getElementById("progress-numerator") as HTMLImageElement).textContent = slider.value;
+    
   }
 
 

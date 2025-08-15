@@ -43,7 +43,6 @@ export class HabitService {
   updateHabitCalendar(id:number, name: string, timesperinstance: number, frequency: string, description: string[] | undefined, tags: string[], calendar: string[]): void {
   // updateHabitCalendar(id:number, name: string, calendar:Map<string,boolean>){
     console.log(
-      // `Updating habit: ${id}, ${name}, ${timesperinstance}, ${frequency}, ${description}, ${tags.join(",")}`
       "Calendar update:", id, calendar
     );
         
