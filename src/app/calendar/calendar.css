@@ -1,18 +1,22 @@
 table {
-    background-color: var(--g1-color);
-    border: 1px solid var(--g4-color);
-    border-collapse: collapse;
-
+    /* border-radius: 15px; */
+    padding: 1px;
+    table-layout: fixed;
 }
 
 table, th, td {
     border: 1px solid var(--g3-color);  
     color: var(--g5-color);
+    border-radius: 5px;
 }
 
-table th {
+td {
+    border: none;
+}
+
+th {
     background-color: var(--g2-color);
-    /* font-size: small; */
+    /* border-radius: 5px; */
 }
 table tr:nth-child(odd) {
     background-color: color-mix(in srgb, var(--g1-color) 50%, var(--g2-color) 50%);

@@ -24,7 +24,7 @@ import { HabitInfo } from '../habit';
         </tr>
         @for(d of dates; track d) {
           <tr>
-          <td class="calen-date">{{ d }}</td>
+          <th class="calen-date">{{ d }}</th>
           @for (m of months; track m) {
             <td>
               <input type="checkbox" id={{m}}{{d}} (click)="dayChecked((m+d))">
@@ -90,9 +90,7 @@ export class Calendar {
   }
 
   resetCalendar() {
-    console.log(this.checkedDays);
     this.checkedDays.forEach(date =>{
-      console.log(date);
       document.getElementById(date)?.removeAttribute("checked");
     });
     this.habitService.updateHabitCalendar(
