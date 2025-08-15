@@ -20,19 +20,19 @@ import { Calendar } from '../calendar/calendar';
       <div class="details-row">
         <div id="content-container" class="secondary-container">
           <div class="details-section">
-            {{ habit?.timesperinstance }}
+            {{habit?.name}} <b>{{ habit?.timesperinstance }} </b>
             @if (habit?.timesperinstance == 1) {
               time
             } @else {
               times
             } {{ habit?.frequency }}
-
             @if (habit?.timesperinstance != 1) {
-              <p></p>
-              <div class="slidecontainer">
-                <input type="range" min=0 max={{habit?.timesperinstance}} value=5 class="slider" id="progress-tracker" (input)="updateTracker()">
+              <div class="desc-section">
+              <input type="range" min=0 max={{habit?.timesperinstance}} value={{habit?.timesdone}} class="slider" id="progress-tracker" (input)="updateTracker()">
               </div>
-              <p> <label id="progress-numerator">x</label> / <label>{{habit?.timesperinstance}} </label></p>
+              <div class="details-row">
+                <label class="progress-text" id="progress-numerator">{{habit?.timesdone}}/{{habit?.timesperinstance}} </label>
+              </div>
             }
           </div>
 
@@ -121,8 +121,17 @@ export class Details {
 
   updateTracker() {
     var slider = <HTMLInputElement> document.getElementById("progress-tracker");
-    (document.getElementById("progress-numerator") as HTMLImageElement).textContent = slider.value;
-    
+    var str: string = slider.value + "/" + this.habit?.timesperinstance;
+    (document.getElementById("progress-numerator") as HTMLImageElement).textContent = (str);
+    this.habitService.updateProgress(
+      this.habitId,
+      this.habit?.name ?? '',
+      Number(slider.value),
+      this.habit?.timesperinstance ?? 1,
+      this.habit?.frequency ??'daily',
+      this.habit?.description ?? [],
+      this.habit?.tags ?? [],
+      this.habit?.calendar ?? []);
   }
 
 
@@ -146,6 +155,7 @@ export class Details {
     this.habitService.editHabit(
       this.habitId,
       this.applyForm.value.name ?? '',
+      this.habit?.timesdone ?? 0,
       Number(this.applyForm.value.timesperinstance) ?? 1,
       this.applyForm.value.frequency ?? 'daily',
       this.applyForm.value.description ?? '',

@@ -32,4 +32,10 @@
   padding: 5px;
   /* border: 1px solid var(--g2-color); */
   border-radius: 5px;
+  /* background-color: color-mix(in srgb, var(--g1-color) 75%, var(--g2-color) 25%); */
+}
+
+.progress-text {
+  color: var(--g4-color);
+  font-size: medium;
 }

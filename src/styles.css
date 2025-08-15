@@ -79,6 +79,24 @@ input[type="number"] {
   border-radius: 20px;
 }
 
+input[type="range"] {
+  appearance: none;
+  /* width: 90%; */
+  accent-color: var(--g4-color);
+  background-color: white;
+  height: 15px;
+  border-radius: 15px;  
+  outline: none;
+  opacity: 0.5;
+  transition: opacity 0.5s;
+}
+
+input[type="range"]:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+
+}
+
+
 label {
   font-weight: bold;
   margin-right: 5px;

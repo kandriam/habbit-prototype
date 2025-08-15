@@ -5,6 +5,7 @@ export interface HabitInfo {
 
     tags?: string[];
 
+    timesdone: number;
     timesperinstance: number;
 
     calendar?: string[];

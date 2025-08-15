@@ -83,6 +83,7 @@ export class Calendar {
     this.habitService.updateHabitCalendar(
       this.habitId,
       this.habit?.name ?? '',
+      this.habit?.timesdone ?? 0,
       this.habit?.timesperinstance ?? 1,
       this.habit?.frequency ??'daily',
       this.habit?.description ?? [],

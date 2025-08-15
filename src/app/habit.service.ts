@@ -18,7 +18,7 @@ export class HabitService {
     const locationJson = await data.json();
     return locationJson[0] ?? {};  }
 
-  editHabit(id:number, name: string, timesperinstance: number, frequency: string, description: string, tags: string[]): void {
+  editHabit(id:number, name: string, timesdone:number, timesperinstance: number, frequency: string, description: string, tags: string[]): void {
     console.log(
       `Editing habit: ${id}, ${name}, ${timesperinstance}, ${frequency}, ${description}, ${tags.join(",")}`
     );
@@ -32,6 +32,7 @@ export class HabitService {
       body: JSON.stringify({
       id: strid,
       name,
+      timesdone,
       timesperinstance,
       frequency,
       description: description.split('\n'), // Multiple lines
@@ -40,12 +41,11 @@ export class HabitService {
     });
   }
 
-  updateHabitCalendar(id:number, name: string, timesperinstance: number, frequency: string, description: string[] | undefined, tags: string[], calendar: string[]): void {
+  updateHabitCalendar(id:number, name: string, timesdone:number, timesperinstance: number, frequency: string, description: string[] | undefined, tags: string[], calendar: string[]): void {
   // updateHabitCalendar(id:number, name: string, calendar:Map<string,boolean>){
     console.log(
       "Calendar update:", id, calendar
     );
-        
     let strid = id.toString();
     fetch(`${this.url}/${id}`, {
       method: 'PUT',
@@ -55,6 +55,30 @@ export class HabitService {
       body: JSON.stringify({
       id: strid,
       name,
+      timesdone,
+      timesperinstance,
+      frequency,
+      description,
+      tags,
+      calendar
+      })
+    });
+  }
+
+  updateProgress(id:number, name: string, timesdone:number, timesperinstance: number, frequency: string, description: string[] | undefined, tags: string[], calendar: string[]): void {
+    console.log(
+      "Progress update:", id, timesdone
+    );
+    let strid = id.toString();
+    fetch(`${this.url}/${id}`, {
+      method: 'PUT',
+      headers: {
+      'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+      id: strid,
+      name,
+      timesdone,
       timesperinstance,
       frequency,
       description,
@@ -82,6 +106,7 @@ export class HabitService {
       body: JSON.stringify({
         id: newId,
         name,
+        timesdone:0,
         timesperinstance,
         frequency,
         // description,
