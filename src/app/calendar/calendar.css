@@ -12,9 +12,14 @@ table, th, td {
 
 table th {
     background-color: var(--g2-color);
+    /* font-size: small; */
 }
 table tr:nth-child(odd) {
     background-color: color-mix(in srgb, var(--g1-color) 50%, var(--g2-color) 50%);
+}
+
+.calendar-title {
+    height: 40px;
 }
 .calen-date, .calen-month {
     padding: 3px;

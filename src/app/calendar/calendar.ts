@@ -11,7 +11,10 @@ import { HabitInfo } from '../habit';
     <div class="secondary-container">
       <table class="calendar">
         <tr>
-          <th colspan=13> {{habit?.name}} </th>
+          <th colspan=13 class="calendar-title">
+            {{habit?.name}}
+            <a class=primary (click)="resetCalendar()">Reset</a>
+          </th>
         </tr>
         <tr>
           <th></th>
@@ -67,19 +70,14 @@ export class Calendar {
   dayChecked(date: string) {
     var element = <HTMLInputElement> document.getElementById(date);
     var isChecked = element.checked;
-    console.log(date, isChecked);
     if (!isChecked) {
       let index = this.checkedDays.indexOf(date);
-      console.log("delete", date, "at", index);
       this.checkedDays.splice(index, 1);
     }
     else (
       this.checkedDays.push(date)
     )
-    // console.log(this.checkedDays);
-    console.log("Sent");
         
-    // this.habitService.updateHabitCalendar(this.habitId, habitname, this.checkedDays);
     this.habitService.updateHabitCalendar(
       this.habitId,
       this.habit?.name ?? '',
@@ -89,6 +87,23 @@ export class Calendar {
       this.habit?.description ?? [],
       this.habit?.tags ?? [],
       this.checkedDays);
+  }
+
+  resetCalendar() {
+    console.log(this.checkedDays);
+    this.checkedDays.forEach(date =>{
+      console.log(date);
+      document.getElementById(date)?.removeAttribute("checked");
+    });
+    this.habitService.updateHabitCalendar(
+      this.habitId,
+      this.habit?.name ?? '',
+      this.habit?.timesdone ?? 0,
+      this.habit?.timesperinstance ?? 1,
+      this.habit?.frequency ??'daily',
+      this.habit?.description ?? [],
+      this.habit?.tags ?? [],
+      []);
   }
 }
 
