@@ -27,8 +27,9 @@ import { Calendar } from '../calendar/calendar';
               times
             } {{ habit?.frequency }}
             @if (habit?.timesperinstance != 1) {
-              <div class="desc-section">
-              <input type="range" min=0 max={{habit?.timesperinstance}} value={{habit?.timesdone}} class="slider" id="progress-tracker" (input)="updateTracker()">
+              <div class="details-row">
+                <input type="range" min=0 max={{habit?.timesperinstance}} value={{habit?.timesdone}} class="slider" id="progress-tracker" (input)="updateTracker()">
+                <a class="primary" type="button" (click)="resetProgress()">Reset</a>
               </div>
               <div class="details-row">
                 <label class="progress-text" id="progress-numerator">{{habit?.timesdone}}/{{habit?.timesperinstance}} </label>
@@ -117,6 +118,11 @@ export class Details {
     });
   }
 
+  resetProgress() {
+    var slider = <HTMLInputElement> document.getElementById("progress-tracker");
+    slider.value = "0";
+    this.updateTracker();
+  }
   
 
   updateTracker() {

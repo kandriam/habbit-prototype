@@ -83,7 +83,7 @@ input[type="range"] {
   appearance: none;
   /* width: 90%; */
   accent-color: var(--g4-color);
-  background-color: white;
+  background-color: color-mix(in srgb, var(--g1-color) 50%, white 50%);
   height: 15px;
   border-radius: 15px;  
   outline: none;

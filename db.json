@@ -7,12 +7,15 @@
       "timesperinstance": 3,
       "frequency": "daily",
       "description": [
-        "dafafdsa"
+        "Sing the abcs"
       ],
       "tags": [
         "Hygene"
       ],
-      "calendar": []
+      "calendar": [
+        "January1",
+        "February2"
+      ]
     },
     {
       "id": "2",
