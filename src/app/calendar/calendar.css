@@ -10,10 +10,12 @@ table, th, td {
     color: var(--g5-color);
 }
 
+table th {
+    background-color: var(--g2-color);
+}
 table tr:nth-child(odd) {
     background-color: color-mix(in srgb, var(--g1-color) 50%, var(--g2-color) 50%);
 }
-
 .calen-date, .calen-month {
     padding: 3px;
     font-size: small;

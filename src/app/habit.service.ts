@@ -65,7 +65,7 @@ export class HabitService {
     });
   }
 
-  createHabit(name: string, timesperinstance: number | string, frequency: string, description: string, tags: string): void {
+  async createHabit(name: string, timesperinstance: number | string, frequency: string, description: string, tags: string): Promise<void> {
     console.log(
       `Creating habit: ${name}, ${timesperinstance}, ${frequency}, ${description}, ${tags}`
     );
@@ -91,6 +91,7 @@ export class HabitService {
         calendar:{}
       })
       });
+      window.location.reload(); // YOU are the problem
     });
   }
 

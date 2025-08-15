@@ -34,6 +34,7 @@ import { HabitInfo } from '../habit';
     `,
   styleUrls: ['../../styles.css', './calendar.css'],
 })
+
 export class Calendar {
   route: ActivatedRoute = inject(ActivatedRoute);
   habitService: HabitService = inject(HabitService);

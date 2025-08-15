@@ -1,5 +1,8 @@
 .results {
-  justify-content: space-around;
+  /* justify-content: space-around; */
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
 }
 
 .home-container {

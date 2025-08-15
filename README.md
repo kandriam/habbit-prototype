@@ -11,13 +11,13 @@ RoadMap (later to be own md)
     - Generate unique id
     - post habit
 [x] Delete habits (waiting on add habits)
-[ ] Multiline descriptions
+[x] Calendar and habit tracker (1 year)
+[x] Multiline descriptions
 [ ] Sort home view
 [ ] Track per day
     - Tracker with length of instancesperday
     - Start of every day with 0/instancesperday
     - user can +/- throughout the day
-[ ] Calendar and habit tracker (1 year)
 [ ] Every x days/weeks/months on x weekdays/dates
 
 Notes:

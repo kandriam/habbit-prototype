@@ -39,8 +39,9 @@
         "2. Apply gel side of strip to front teeth. Align straight edge of strip with gumline. Fold over teeth and press to secure.",
         "3. After 30 minutes, peel strip from corner and pull gently across to ease removal. Rinse or brush to remove remaining gel."
       ],
-      "tags": [],
-      "calendar": []
+      "tags": [
+        "Hygene"
+      ]
     },
     {
       "id": "4",
@@ -48,7 +49,7 @@
       "timesperinstance": 1,
       "frequency": "daily",
       "description": [
-        "Go to the gym and exercise.",
+        "Go to the gym and exercise. Remember water bottle",
         "1. Warm up for 10 minutes.",
         "2. Treadmill.",
         "3. Do strength training for 30 minutes.",
@@ -61,7 +62,7 @@
       ]
     },
     {
-      "id": "5",
+      "id": "6",
       "name": "Write at least a page",
       "timesperinstance": 1,
       "frequency": "daily",
@@ -73,27 +74,34 @@
       ]
     },
     {
-      "id": "6",
-      "name": "read something",
+      "id": "7",
+      "name": "Test",
       "timesperinstance": 1,
       "frequency": "daily",
       "description": [
-        "news and book"
+        "htfdg"
       ],
       "tags": [
-        "Self care",
-        "intellect"
-      ]
+        "a fd",
+        "sdf",
+        "ds af",
+        "fsda",
+        "f",
+        "sdafdd",
+        "ds af"
+      ],
+      "calendar": {}
     },
     {
-      "id": "7",
-      "name": "habit",
+      "id": "8",
+      "name": "dsf",
       "timesperinstance": 1,
       "frequency": "daily",
       "description": [
-        "habrts"
+        "dfsf"
       ],
-      "tags": []
+      "tags": [],
+      "calendar": {}
     }
   ]
 }

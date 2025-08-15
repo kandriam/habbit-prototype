@@ -21,6 +21,8 @@
 .tag-section {
   margin-block: 5px;
   padding: 5px;  
+  display: flex;
+  flex-wrap: wrap;
 }
 .habit-tags {
   padding: 5px 5px 5px 5px;
@@ -37,16 +39,4 @@
 
   transition: background-color 0.5s;
   transition: box-shadow 0.5s;
-}
-
-.habit-tags::before {
-    content: "#";
-}
-
-.habit-tags:hover {
-    box-shadow: 0px 5px 5px var(--g4-color);
-}
-
-.habit-tags:active {
-    background-color: var(--g1-color);
 }

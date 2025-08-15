@@ -17,7 +17,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
             <input type="text" name="habit-name" placeholder="Habit name" formControlName="name" autocomplete="off" required>
           </div>
           <div>
-            <input type="number" name="habit-timesperinstance" value=1 formControlName="timesperinstance">
+            <input type="number" name="habit-timesperinstance" min=1 value=1 formControlName="timesperinstance">
             <label for="habit-timesperinstance">time(s) per</label>
             <select name="habit-frequency" formControlName="frequency">
               <option value="daily">Day</option>
@@ -40,7 +40,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
       <section>
         <h2>Habits</h2>
         <form>
-          <input id="search-bar" type="text" placeholder="Filter by tag or name" (input)="filterResults(filter.value)" #filter />
+          <input id="search-bar" type="text" placeholder="Filter by tag or name" (input)="filterResults(filter.value)" autocomplete="off" #filter />
           <a class="primary" type="button" (click)="filterResults(filter.value)">Search</a>
         </form>
       </section>
@@ -86,15 +86,15 @@ export class Home {
     );
   }
 
-  createHabit() {
-    this.habitService.createHabit(
+  async createHabit() {
+    await this.habitService.createHabit(
       this.applyForm.value.name ?? '',
       Number(this.applyForm.value.timesperinstance) ?? 1,
       this.applyForm.value.frequency ?? 'daily',
       this.applyForm.value.description ?? '',
       this.applyForm.value.tags ?? '',
     );
-    window.location.reload();
+    // window.location.reload();
   }
 }
 
