@@ -5,8 +5,7 @@
     margin: 5px;
     background-color: color-mix(in srgb, var(--g1-color) 75%, var(--g2-color) 25%);
     /* border: 1px solid var(--g2-color); */
-    display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
 .habit-tags {

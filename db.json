@@ -24,7 +24,8 @@
       ],
       "tags": [
         "Hygene"
-      ]
+      ],
+      "calendar": []
     },
     {
       "id": "3",
@@ -39,12 +40,21 @@
       ],
       "tags": [
         "Hygene"
+      ],
+      "calendar": [
+        "February1",
+        "March2",
+        "March4",
+        "March5",
+        "May3",
+        "May1",
+        "August2"
       ]
     },
     {
       "id": "4",
       "name": "Gym",
-      "timesdone": 0,
+      "timesdone": 5,
       "timesperinstance": 5,
       "frequency": "weekly",
       "description": [
@@ -92,6 +102,9 @@
         "f",
         "sa f",
         "d"
+      ],
+      "calendar": [
+        "May2"
       ]
     },
     {
@@ -104,6 +117,27 @@
         ""
       ],
       "tags": []
+    },
+    {
+      "id": "9",
+      "name": "Nail biting",
+      "timesdone": 0,
+      "timesperinstance": 1,
+      "frequency": "daily",
+      "description": [
+        "Don't do"
+      ],
+      "tags": [
+        "Forbidden",
+        "don't",
+        "evil"
+      ],
+      "calendar": [
+        "May1",
+        "May2",
+        "March1",
+        "March2"
+      ]
     }
   ]
 }

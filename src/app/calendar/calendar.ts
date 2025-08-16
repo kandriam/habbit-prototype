@@ -92,16 +92,17 @@ export class Calendar {
   resetCalendar() {
     this.checkedDays.forEach(date =>{
       document.getElementById(date)?.removeAttribute("checked");
+      this.habitService.updateHabitCalendar(
+        this.habitId,
+        this.habit?.name ?? '',
+        this.habit?.timesdone ?? 0,
+        this.habit?.timesperinstance ?? 1,
+        this.habit?.frequency ??'daily',
+        this.habit?.description ?? [],
+        this.habit?.tags ?? [],
+        []);
+        window.location.reload();
     });
-    this.habitService.updateHabitCalendar(
-      this.habitId,
-      this.habit?.name ?? '',
-      this.habit?.timesdone ?? 0,
-      this.habit?.timesperinstance ?? 1,
-      this.habit?.frequency ??'daily',
-      this.habit?.description ?? [],
-      this.habit?.tags ?? [],
-      []);
   }
 }
 

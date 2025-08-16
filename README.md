@@ -19,6 +19,9 @@ RoadMap (later to be own md)
     - Start of every day with 0/instancesperday
     - user can +/- throughout the day
 [ ] Every x days/weeks/months on x weekdays/dates
+[ ] Proggy
+    - Reset on new day
+    - Once completed, mark as complete on today's date
 
 Notes:
 - Why ids in json are strings and not numbers?
