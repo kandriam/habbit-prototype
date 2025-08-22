@@ -22,12 +22,16 @@ import { Calendar } from '../calendar/calendar';
         <div id="content-container" class="secondary-container">
 
           <div class="details-section">
-            {{habit?.name}} {{ habit?.timesperinstance }} 
-            @if (habit?.timesperinstance == 1) {
-              time
-            } @else {
-              times
-            } {{ habit?.frequency }}
+            <div class="details-row">
+              {{habit?.name}} {{ habit?.timesperinstance }} 
+              @if (habit?.timesperinstance == 1) {
+                time
+              } @else {
+                times
+              } {{ habit?.frequency }}
+              <a class="primary" type="button" (click)="toggleToday()">Toggle Complete</a>
+            </div>
+
             <div class="desc-section">
             @if (habit?.timesperinstance != 1) {
               <div class="details-row">
@@ -82,6 +86,7 @@ import { Calendar } from '../calendar/calendar';
           </div>
 
           <label for="habit-description">Description:</label>
+          <br>
           <textarea name="habit-description" placeholder="Description (optional)" formControlName="description">
           </textarea>
           <div>
@@ -102,6 +107,7 @@ export class Details {
   habit: HabitInfo | undefined;
   applyForm: FormGroup;
   habitId: number;
+
 
   constructor() {
     this.habitId = Number(this.route.snapshot.params['id']);
@@ -125,14 +131,16 @@ export class Details {
       });
     });
   }
-
+  
+  // Sets progress tracker slider back to 0
   resetProgress() {
     var slider = <HTMLInputElement> document.getElementById("progress-tracker");
     slider.value = "0";
     this.updateTracker();
   }
   
-
+  // Updates progress tracker's label to the appropriate amount completed
+  // and updates database with approprate amount completed
   updateTracker() {
     var slider = <HTMLInputElement> document.getElementById("progress-tracker");
     var str: string = slider.value + "/" + this.habit?.timesperinstance;
@@ -146,6 +154,20 @@ export class Details {
       this.habit?.description ?? [],
       this.habit?.tags ?? [],
       this.habit?.calendar ?? []);
+  }
+
+  toggleToday() {
+    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let today = new Date;
+    let strdate = months[today.getMonth()] + today.getDate() + today.getFullYear();
+    console.log(strdate)
+    const date = document.getElementById(strdate) as HTMLInputElement;
+    if (date.checked == true) {
+      date.checked = false;
+    } else {
+      date.checked = true;
+    }
+    console.log(strdate);
   }
 
 

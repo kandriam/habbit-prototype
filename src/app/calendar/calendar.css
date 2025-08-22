@@ -9,12 +9,14 @@ table, th, td {
     border: 1px solid var(--g3-color);  
     color: var(--g5-color);
     border-radius: 5px;
+    /* padding: 0; */
 }
 
 td {
     border: 1px solid var(--g1-color);
     /* border: 3px solid color-mix(in srgb, var(--g1-color) 50%, var(--g2-color) 50%); */
     border-radius: 0;
+    padding: 0px;
 
 }
 
@@ -45,12 +47,21 @@ table tr:nth-child(odd) {
 }
 
 input[type="checkbox"] {
+    /* -moz-appearance:none;
+    -webkit-appearance:none;
+    -o-appearance:none; */
     /* position: absolute; */
     accent-color: var(--g3-color);
-    height: 20px;
-    width: 20px;
+    height: 25px;
+    width: 25px;
+    /* border: red; */
+
 }
 
 input[type="checkbox"] :hover {
-    box-shadow: 0px 5px 5px var(--g4-color);
+    box-shadow: 5px 5px 5px var(--g4-color);
+}
+
+.today {
+    box-shadow: 0px 0px 2px 5px yellowgreen;
 }

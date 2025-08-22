@@ -8,7 +8,7 @@ import { HabitService } from '../habit.service';
   standalone: true,
   imports: [RouterLink, RouterOutlet],
   template: `
-    <section class="habit-thumbnail">
+    <section [routerLink]="['/details', habit().id]" class="habit-thumbnail">
       <div class="thumbnail-section">
         <h3>{{ habit().name }}</h3>
         <div>
@@ -38,8 +38,10 @@ export class Habit {
   habitService: HabitService = inject(HabitService);
   habit = input.required<HabitInfo>()
   
-  // Put tag into search bar
+  // Called by habit tag being clicked
+  // Put tag into search bar and search it
   searchByTag(tag: string): void {
+    event?.stopPropagation(); // I know event is deprecated, but I don't know an alternative
     const searchInput = document.getElementById('search-bar') as HTMLInputElement | null;
     if (searchInput) {
       searchInput.value = tag;
@@ -47,7 +49,9 @@ export class Habit {
     }
 
   }
-  
+
+  // Called by delete habit button  clicked
+  // Deletes habit through habit.service
   deleteHabit(id: number) {
     console.log(`Deleting habit from home: ${id}`)
     this.habitService.deleteHabit(id);
