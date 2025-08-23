@@ -31,6 +31,7 @@ RoadMap (later to be own md)
 [ ] Sort home view
 [x] Mark today as complete button
 [-] Every x days/weeks/months on x weekdays/dates
+[x] Different years
 [ ] Calendar on home page
 [ ] Progress tasks
 

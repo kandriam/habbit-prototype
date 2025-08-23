@@ -12,10 +12,15 @@ import { HabitInfo } from '../habit';
       <table class="calendar">
         <tr>
           <th colspan=13 class="calendar-title">
-            <a class = "secondary">⇦{{curryear-1}}</a>
-            {{curryear}}
-            <a class = "secondary">{{curryear+1}}⇨</a>
-            <a class="primary" (click)="resetCalendar()">Reset</a>
+            <input type="number" id="year-input" value={{curryear}} (input)="searchYear()" min=1>
+            <a class="primary" (click)="resetCalendar()">Reset Calendar</a>
+          </th>
+        </tr>
+        <tr>
+          <th colspan=13 class="calendar-title">
+            <a class="secondary" id="prevyear" (click)="changeYear(curryear-1)">{{curryear-1}}</a>
+            <a class="primary" id="curryear" (click)="changeYear(year)"> {{curryear}}</a>
+            <a class="secondary" id="nextyear" (click)="changeYear(curryear+1)">{{curryear+1}}</a>
           </th>
         </tr>
 
@@ -30,7 +35,7 @@ import { HabitInfo } from '../habit';
           <th class="calen-date">{{ d }}</th>
           @for (m of months; track m) {
             <td>
-              <input type="checkbox" id={{m}}{{d}}{{curryear}} (click)="dayChecked((m+d+curryear))">
+              <input type="checkbox" id={{m}}{{d}} (click)="dayChecked((m+d+curryear))">
             </td>
           }
           </tr>
@@ -61,33 +66,44 @@ export class Calendar {
 
     this.habitService.getHabitsById(this.habitId).then((habit) => {
       this.habit = habit;
-      this.loadcalendar();
+      this.loadcalendar(this.year);
+      if (habit?.calendar) {
+        this.checkedDays = habit.calendar;
+      }
+
+      this.loadcalendar(this.year);
     });
   }
 
-  loadcalendar() {
+  loadcalendar(year: number) {
     console.log("load");
     
     this.habit?.calendar?.forEach( date =>{
-      this.checkedDays.push(date);
-      document.getElementById(date)?.setAttribute("checked", "checked");
+      // let dateyear = date.slice(-4);
+      if (date.slice(-4) == year.toString()) {
+        let checkbox = document.getElementById(date.slice(0,-4)) as HTMLInputElement;
+        checkbox.checked = true;
       }
-    )
-    let todaysdate = this.months[this.month] + this.date + this.year;
-    const today = document.getElementById(todaysdate) as HTMLInputElement;
-    today.classList.add("today");
+      else {
+        let checkbox = document.getElementById(date.slice(0,-4)) as HTMLInputElement;
+        checkbox.checked = false;
+      }
+    });
   }
 
   dayChecked(date: string) {
-    var checkbox = <HTMLInputElement> document.getElementById(date);
-    var isChecked = checkbox.checked;
-    if (!isChecked) {
-      let index = this.checkedDays.indexOf(date);
+    // var checkbox = <HTMLInputElement> document.getElementById(date+this.curryear);
+    let fulldate = date;
+    console.log(fulldate);
+
+    if ((this.checkedDays.includes(fulldate))) {
+      let index = this.checkedDays.indexOf(date+this.curryear);
       this.checkedDays.splice(index, 1);
     }
-    else (
-      this.checkedDays.push(date)
-    )
+    else {
+      this.checkedDays.push(fulldate);
+    }
+    console.log(this.checkedDays);
         
     this.habitService.updateHabitCalendar(
       this.habitId,
@@ -100,22 +116,37 @@ export class Calendar {
       this.checkedDays);
   }
 
+  changeYear(year: number) {
+    this.curryear = year;
+    this.loadcalendar(year);
+  }
+
+  searchYear(){
+    var yearinput = document.getElementById("year-input") as HTMLInputElement;
+    console.log(yearinput.value);
+    this.changeYear(Number(yearinput.value));
+  }
+
   resetCalendar() {
-    this.checkedDays.forEach(date =>{
+    console.log("resetting");
+    // this.checkedDays.forEach(date =>{
       // document.getElementById(date)?.removeAttribute('checked');
-      let checkbox = document.getElementById(date) as HTMLInputElement;
-      checkbox.checked = false;
-      this.habitService.updateHabitCalendar(
-        this.habitId,
-        this.habit?.name ?? '',
-        this.habit?.timesdone ?? 0,
-        this.habit?.timesperinstance ?? 1,
-        this.habit?.frequency ??'daily',
-        this.habit?.description ?? [],
-        this.habit?.tags ?? [],
-        []);
-        // window.location.reload();
-    });
+      // let checkbox = document.getElementById(date) as HTMLInputElement;
+      // checkbox.checked = false;
+      // });
+    this.habitService.updateHabitCalendar(
+      this.habitId,
+      this.habit?.name ?? '',
+      this.habit?.timesdone ?? 0,
+      this.habit?.timesperinstance ?? 1,
+      this.habit?.frequency ??'daily',
+      this.habit?.description ?? [],
+      this.habit?.tags ?? [],
+      []);
+    this.checkedDays = [];
+    window.location.reload();
+    // this.loadcalendar(this.curryear);
+    
   }
 }
 
