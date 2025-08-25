@@ -29,14 +29,17 @@ import { Calendar } from '../calendar/calendar';
               } @else {
                 times
               } {{ habit?.frequency }}
-              <a class="primary" type="button" (click)="toggleToday()">Toggle Complete</a>
             </div>
 
             <div class="desc-section">
             @if (habit?.timesperinstance != 1) {
               <div class="details-row">
-                <input type="range" min=0 max={{habit?.timesperinstance}} value={{habit?.timesdone}} class="slider" id="progress-tracker" (input)="updateTracker()">
-                <a class="primary" type="button" (click)="resetProgress()">Reset</a>
+                <div class="details-row">
+                  <a class="secondary" (click)="changeTracker(-1)">-</a>
+                  <input id="progress-tracker" type="range" min=0 max={{habit?.timesperinstance}} value={{habit?.timesdone}} class="slider" (input)="updateTracker()">
+                  <a class="secondary" (click)="changeTracker(1)">+</a>
+                </div>
+                <a class="secondary" type="button" (click)="resetProgress()">Reset</a>
               </div>
               <div class="details-row">
                 <label class="progress-text" id="progress-numerator">{{habit?.timesdone}}/{{habit?.timesperinstance}} </label>
@@ -108,7 +111,6 @@ export class Details {
   applyForm: FormGroup;
   habitId: number;
 
-
   constructor() {
     this.habitId = Number(this.route.snapshot.params['id']);
     this.applyForm = new FormGroup({
@@ -136,6 +138,14 @@ export class Details {
   resetProgress() {
     var slider = <HTMLInputElement> document.getElementById("progress-tracker");
     slider.value = "0";
+    this.updateTracker();        
+  }
+
+  // Takes in num of type number
+  // Incraments (or decraments) tracker by said amount
+  changeTracker(num: number){
+    var slider = <HTMLInputElement> document.getElementById("progress-tracker");
+    slider.value = (Number(slider.value) + Number(num)).toString();
     this.updateTracker();
   }
   
@@ -156,19 +166,18 @@ export class Details {
       this.habit?.calendar ?? []);
   }
 
-  toggleToday() {
-    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    let today = new Date;
-    let strdate = months[today.getMonth()] + today.getDate() + today.getFullYear();
-    console.log(strdate)
-    const date = document.getElementById(strdate) as HTMLInputElement;
-    if (date.checked == true) {
-      date.checked = false;
-    } else {
-      date.checked = true;
-    }
-    console.log(strdate);
-  }
+  // toggleToday() {
+  //   let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  //   let today = new Date;
+  //   let strdate = months[today.getMonth()] + today.getDate();
+  //   console.log(strdate);
+  //   const yeardisplay = document.getElementById("curryear");
+  //   if (yeardisplay?.innerText.toString() == today.getFullYear().toString()) {
+  //     console.log("today!")
+  //     const date = document.getElementById(strdate) as HTMLInputElement;
+  //     date.checked = !date.checked;
+  //   }
+  // }
 
 
   // searchByTag does not yet work
@@ -199,6 +208,7 @@ export class Details {
         .split(',')
         .map((tag: string) => tag.trim())
         .filter((tag: string) => tag.length > 0),
+      this.habit?.calendar ?? []
     );
     window.location.reload();
   }

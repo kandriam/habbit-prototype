@@ -25,6 +25,7 @@ th {
     /* font-size: large; */
     /* border-radius: 5px; */
 }
+
 table tr:nth-child(odd) {
     background-color: color-mix(in srgb, var(--g1-color) 50%, var(--g2-color) 50%);
 }

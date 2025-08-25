@@ -12,14 +12,15 @@ import { HabitInfo } from '../habit';
       <table class="calendar">
         <tr>
           <th colspan=13 class="calendar-title">
+            <a class="secondary" (click)="toggleToday()">ToggleToday</a>
             <input type="number" id="year-input" value={{curryear}} (input)="searchYear()" min=1>
-            <a class="primary" (click)="resetCalendar()">Reset Calendar</a>
+            <a class="secondary" (click)="resetCalendar()">Reset Calendar</a>
           </th>
         </tr>
         <tr>
           <th colspan=13 class="calendar-title">
             <a class="secondary" id="prevyear" (click)="changeYear(curryear-1)">{{curryear-1}}</a>
-            <a class="primary" id="curryear" (click)="changeYear(year)"> {{curryear}}</a>
+            <a class="primary" id="curryear" (click)="changeYear(year)">{{curryear}}</a>
             <a class="secondary" id="nextyear" (click)="changeYear(curryear+1)">{{curryear+1}}</a>
           </th>
         </tr>
@@ -54,7 +55,7 @@ export class Calendar {
   habitId: number;
   fulldate =  new Date();
   year = this.fulldate.getFullYear();
-  month = this.fulldate.getMonth() + 1;
+  month = this.fulldate.getMonth();
   date = this.fulldate.getDate();
   curryear = this.year;
 
@@ -89,6 +90,16 @@ export class Calendar {
         checkbox.checked = false;
       }
     });
+    
+    let todaycheckbox = document.getElementById(this.months[this.month]+this.date);
+    if (this.curryear == this.year) {
+      console.log("This year")
+      todaycheckbox?.classList.add('today');
+    } else {
+      if (todaycheckbox?.classList.contains('today')) {
+        todaycheckbox.classList.remove('today');
+      }
+    }
   }
 
   dayChecked(date: string) {
@@ -125,6 +136,19 @@ export class Calendar {
     var yearinput = document.getElementById("year-input") as HTMLInputElement;
     console.log(yearinput.value);
     this.changeYear(Number(yearinput.value));
+  }
+
+  toggleToday() {
+    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let strdate = months[this.month] + this.date;
+    console.log(strdate);
+    const yeardisplay = document.getElementById("curryear");
+    if (yeardisplay?.innerText.toString() == this.year.toString()) {
+      console.log("today!")
+      const date = document.getElementById(strdate) as HTMLInputElement;
+      date.checked = !date.checked;
+      this.dayChecked(strdate+this.year);
+    }
   }
 
   resetCalendar() {

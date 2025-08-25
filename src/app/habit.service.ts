@@ -18,7 +18,7 @@ export class HabitService {
     const locationJson = await data.json();
     return locationJson[0] ?? {};  }
 
-  editHabit(id:number, name: string, timesdone:number, timesperinstance: number, frequency: string, description: string, tags: string[]): void {
+  editHabit(id:number, name: string, timesdone:number, timesperinstance: number, frequency: string, description: string, tags: string[], calendar: string[]): void {
     console.log(
       `Editing habit: ${id}, ${name}, ${timesperinstance}, ${frequency}, ${description}, ${tags.join(",")}`
     );
@@ -36,7 +36,8 @@ export class HabitService {
       timesperinstance,
       frequency,
       description: description.split('\n'), // Multiple lines
-      tags
+      tags,
+      calendar
       })
     });
   }

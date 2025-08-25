@@ -3,17 +3,41 @@
     {
       "id": "1",
       "name": "Brush teeth",
-      "timesdone": 0,
+      "timesdone": 3,
       "timesperinstance": 3,
       "frequency": "daily",
       "description": [
-        "sing abcs"
+        "sing abcs OR 2 min",
+        "Use the purple OR charcoal one"
       ],
       "tags": [
         "Hygene"
       ],
       "calendar": [
-        "March22025"
+        "August12025",
+        "August32025",
+        "August22025",
+        "August42025",
+        "August52025",
+        "August62025",
+        "August72025",
+        "August82025",
+        "August92025",
+        "August102025",
+        "August112025",
+        "August122025",
+        "August132025",
+        "August142025",
+        "August152025",
+        "August162025",
+        "August172025",
+        "August182025",
+        "August242025",
+        "August232025",
+        "August222025",
+        "August212025",
+        "August202025",
+        "August192025"
       ]
     },
     {
@@ -160,6 +184,22 @@
       ],
       "tags": [],
       "calendar": []
+    },
+    {
+      "id": "11",
+      "name": "sdfsf",
+      "timesdone": 0,
+      "timesperinstance": 2,
+      "frequency": "daily",
+      "description": [
+        "sdfdsf"
+      ],
+      "tags": [
+        "sf",
+        "fsd",
+        "sfd"
+      ],
+      "calendar": {}
     }
   ]
 }

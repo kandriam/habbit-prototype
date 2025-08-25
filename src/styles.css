@@ -78,6 +78,14 @@ a {
   transition: box-shadow 0.5s;
 }
 
+.secondary:hover {
+    box-shadow: 0px 5px 5px var(--g4-color);
+}
+
+.secondary:active {
+    background-color: var(--g3-color);
+    box-shadow: 0px 5px 5px var(--g4-color);
+}
 
 input {
   border: solid 1px var(--g5-color);
