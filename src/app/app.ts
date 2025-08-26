@@ -9,7 +9,7 @@ import {RouterModule} from '@angular/router';
     <main>
       <header>
         <a [routerLink]="['/']"><h1>Habbit</h1></a>
-        <div id="date"></div>
+          <div id="header-date"></div>
       </header>
       <section class="content">
         <router-outlet></router-outlet>
@@ -33,7 +33,7 @@ function displayDate() {
     let y = date.getFullYear();
     let m = date.getMonth() + 1;
     let d = date.getDate();
-    var datedisplay = document.getElementById("date");
+    var datedisplay = document.getElementById("header-date");
     datedisplay!.innerHTML = (`
       <h3>${m} / ${d} / ${y}</h3>
       <h4>${months[m-1]} ${d}, ${y}</h4>

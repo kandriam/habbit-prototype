@@ -13,6 +13,8 @@ body {
   --g3-color: #537b2f;
   --g2-color: #8da750;
   --g1-color: #e4eb9c;
+
+  --accent: orange;
 }
 
 h1, h2, h3 {
@@ -87,6 +89,33 @@ a {
     box-shadow: 0px 5px 5px var(--g4-color);
 }
 
+.listbutton {
+  display: block;
+  border: solid 1px var(--g5-color);
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: small;
+  padding: 2px;
+  padding-right: 10px;
+  margin: 2px;
+
+  color: var(--g5-color);
+  
+  background-color: var(--g2-color);
+
+  transition: background-color 0.5s;
+  transition: box-shadow 0.5s;
+}
+
+.listbutton:hover {
+    box-shadow: 0px 5px 5px var(--g3-color);
+}
+
+.listbutton:active {
+    background-color: var(--g3-color);
+    box-shadow: 0px 5px 5px var(--g4-color);
+}
+
 input {
   border: solid 1px var(--g5-color);
   padding: 5px;
@@ -121,6 +150,19 @@ input[type="range"]:hover {
 
 }
 
+input[type="checkbox"] {
+    /* -moz-appearance:none;
+    -webkit-appearance:none;
+    -o-appearance:none; */
+    /* position: absolute; */
+    accent-color: var(--accent);
+    /* height: 10px;
+    width: 10px; */
+}
+
+input[type="checkbox"] :hover {
+    box-shadow: 5px 5px 5px var(--g4-color);
+}
 
 label {
   font-weight: bold;
@@ -143,12 +185,12 @@ textarea {
 }
 
 aside {
-  width: 30%;
+  /* width: 30%; */
   padding-left: 15px;
   margin-left: 15px;
-  float: right;
+  /* float: right; */
   font-style: italic;
-  background-color: lightgray;
+  /* background-color: lightgray; */
 }
 
 
@@ -164,6 +206,8 @@ select {
   border-radius: 15px;
   padding: 15px;
   margin: 15px;
+  /* width: 100%; */
+  min-width: fit-content;
 }
 
 .secondary-container {
@@ -171,10 +215,14 @@ select {
   border-radius: 15px;
   padding: 20px;
   margin:10px;
-  width: 90%;
-  
+  /* width: 90%; */
+  min-width: fit-content;
 }
 
+.horizontal-div {
+  display: flex;
+  justify-content: space-between;
+}
 
 .habit-tags::before {
     content: "#";

@@ -2,13 +2,26 @@ import { Component, inject } from '@angular/core';
 import { HabitInfo } from '../habit';
 import { Habit } from '../habit/habit';
 import { HabitService } from '../habit.service';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
-  imports: [ Habit, ReactiveFormsModule ],
+  imports: [ Habit, ReactiveFormsModule, RouterLink ],
   template: `
     <section>
+      <div class="horizontal-div">
+      <div class="primary-container">
+      <h3>Today's Habits</h3>
+        <div class="secondary-container">
+          @for(habit of filteredHabitList; track $index) {
+            <a class="listbutton" [routerLink]="['/details', habit.id]">
+            <input type="checkbox">
+            {{habit.name}}
+            </a>
+          }
+        </div>
+      </div>
       <form [formGroup]="applyForm" (submit)="createHabit()">
         <div class="primary-container">
           <h3>Add New Habit</h3>
@@ -36,6 +49,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
           <button class="primary" type="submit">Add Habit</button>
         </div>
       </form>
+      </div>
 
       <section>
         <h2>Habits</h2>
@@ -94,7 +108,8 @@ export class Home {
       this.applyForm.value.description ?? '',
       this.applyForm.value.tags ?? '',
     );
-    // window.location.reload();
   }
+  
 }
+
 

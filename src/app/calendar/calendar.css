@@ -52,7 +52,7 @@ input[type="checkbox"] {
     -webkit-appearance:none;
     -o-appearance:none; */
     /* position: absolute; */
-    accent-color: var(--g3-color);
+    accent-color: var(--accent);
     height: 25px;
     width: 25px;
     /* border: red; */

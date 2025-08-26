@@ -3,7 +3,7 @@ import { RouterLink, RouterOutlet, ActivatedRoute } from '@angular/router';
 import { HabitService } from '../habit.service';
 import { HabitInfo } from '../habit';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { Calendar } from '../calendar/calendar';
+import { Calendar } from '../calendar/habitcalendar';
 
 @Component({
   selector: 'app-habitdetails',
@@ -17,10 +17,8 @@ import { Calendar } from '../calendar/calendar';
       </div>
     </div>
     <article>
-
       <div class="details-row">
-        <div id="content-container" class="secondary-container">
-
+        <div id="content-container" class="secondary-container"  style="width: 100%">
           <div class="details-section">
             <div class="details-row">
               {{habit?.name}} {{ habit?.timesperinstance }} 
