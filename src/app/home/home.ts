@@ -11,17 +11,6 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   template: `
     <section>
       <div class="horizontal-div">
-      <div class="primary-container">
-      <h3>Today's Habits</h3>
-        <div class="secondary-container">
-          @for(habit of filteredHabitList; track $index) {
-            <a class="listbutton" [routerLink]="['/details', habit.id]">
-            <input type="checkbox">
-            {{habit.name}}
-            </a>
-          }
-        </div>
-      </div>
       <form [formGroup]="applyForm" (submit)="createHabit()">
         <div class="primary-container">
           <h3>Add New Habit</h3>

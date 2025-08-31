@@ -9,8 +9,8 @@ import { Calendar } from '../calendar/habitcalendar';
   selector: 'app-habitdetails',
   imports: [RouterLink, RouterOutlet, ReactiveFormsModule, Calendar],
   template: `
-    <div class="primary-container" style="display: flex; justify-content: space-between;">
-      <h1>{{habit?.name}}</h1>
+    <div class="details-header" style="display: flex; justify-content: space-between;">
+      <h2>{{habit?.name}}</h2>
       <div class="details-row">
         <a class="primary" (click)="deleteHabit(habit?.id)">Delete Habit</a>
         <a class="primary" [routerLink]="['/']">Back</a>

@@ -24,6 +24,7 @@
   display: flex;
   flex-wrap: wrap;
 }
+
 .habit-tags {
   padding: 5px 5px 5px 5px;
   margin: 5px;
@@ -34,7 +35,7 @@
   font-size: small;
   font-style: italic;
 
-  color: var(--g3-color);
+  color: var(--g4-color);
   background-color: var(--g2-color);
 
   transition: background-color 0.5s;

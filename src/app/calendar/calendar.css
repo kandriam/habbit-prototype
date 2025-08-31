@@ -52,7 +52,7 @@ input[type="checkbox"] {
     -webkit-appearance:none;
     -o-appearance:none; */
     /* position: absolute; */
-    accent-color: var(--accent);
+    accent-color: var(--o4-color);
     height: 25px;
     width: 25px;
     /* border: red; */
@@ -63,5 +63,5 @@ input[type="checkbox"] :hover {
 }
 
 .today {
-    box-shadow: 0px 0px 2px 5px yellowgreen;
+    box-shadow: 0px 0px 2px 3px var(--o2-color);
 }

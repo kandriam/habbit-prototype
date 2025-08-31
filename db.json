@@ -37,7 +37,13 @@
         "August222025",
         "August212025",
         "August202025",
-        "August192025"
+        "August192025",
+        "August252025",
+        "August262025",
+        "August272025",
+        "August282025",
+        "August292025",
+        "August302025"
       ]
     },
     {
@@ -54,7 +60,8 @@
       ],
       "calendar": [
         "March12025",
-        "January12025"
+        "January12025",
+        "August302025"
       ]
     },
     {

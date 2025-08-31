@@ -8,13 +8,17 @@ body {
   font-family: 'Be Vietnam Pro', sans-serif;
 }
 :root {
-  --g5-color: #142c14;
-  --g4-color: #2d5128;
-  --g3-color: #537b2f;
-  --g2-color: #8da750;
-  --g1-color: #e4eb9c;
+  --g5-color: #3da45e;
+  --g4-color: #66c266;
+  --g3-color: #99d78f;
+  --g2-color: #c2e8b1;
+  --g1-color: #e5f4e3;
 
-  --accent: orange;
+  --o5-color: #a85f00;
+  --o4-color: #d67c00;
+  --o3-color: #e9a400;
+  --o2-color: #f4c300;
+  --o1-color: #f1e1b7;
 }
 
 h1, h2, h3 {
@@ -25,14 +29,17 @@ h1, h2, h3 {
 
 h1 {
     font-size: xx-large;
+    color: var(--o4-color);
 }
 
 h2 {
     font-size: x-large;
+    color: var(--o4-color);
 }
 
 h3 {
   font-size: large;
+    color: var(--o4-color);
 }
 
 a {
@@ -42,14 +49,15 @@ a {
 .primary {
   border: solid 1px var(--g5-color);
   border-radius: 10px;
+  font-weight: bold;
   text-decoration: none;
-  font-size: large;
+  font-size: small;
   padding: 5px;
   margin: 5px;
 
-  color: var(--g5-color);
+  color: var(--o4-color);
   
-  background-color: var(--g2-color);
+  background-color: var(--g3-color);
 
   transition: background-color 0.5s;
   transition: box-shadow 0.5s;
@@ -68,11 +76,11 @@ a {
   border: solid 1px var(--g5-color);
   border-radius: 10px;
   text-decoration: none;
-  font-size: small;
+  font-size: x-small;
   padding: 5px;
   margin: 5px;
 
-  color: var(--g5-color);
+  color: var(--o5-color);
   
   background-color: var(--g2-color);
 
@@ -136,7 +144,7 @@ input[type="number"] {
 input[type="range"] {
   appearance: none;
   /* width: 90%; */
-  accent-color: var(--g4-color);
+  accent-color: var(--o4-color);
   background-color: color-mix(in srgb, var(--g1-color) 50%, white 50%);
   height: 15px;
   border-radius: 15px;  
@@ -155,7 +163,7 @@ input[type="checkbox"] {
     -webkit-appearance:none;
     -o-appearance:none; */
     /* position: absolute; */
-    accent-color: var(--accent);
+    accent-color: var(--o5-color);
     /* height: 10px;
     width: 10px; */
 }
@@ -168,11 +176,12 @@ label {
   font-weight: bold;
   margin-right: 5px;
   font-size: small;
+  color: var(--o5-color);
 }
 
 label:has(+ input:required)::after {
   content: " *";
-  color: pink; /* Optional: Make the asterisk red */
+  color: var(--o4-color); /* Optional: Make the asterisk red */
 }
 
 textarea {
@@ -206,8 +215,8 @@ select {
   border-radius: 15px;
   padding: 15px;
   margin: 15px;
-  /* width: 100%; */
-  min-width: fit-content;
+  width: 100%;
+  /* min-width: fit-content; */
 }
 
 .secondary-container {
@@ -222,6 +231,7 @@ select {
 .horizontal-div {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .habit-tags::before {

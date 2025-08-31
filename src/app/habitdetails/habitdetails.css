@@ -1,11 +1,19 @@
+.details-header {
+  padding: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  background-color: var(--g2-color);
+  border: 1 px solid var(--g3-color);
+}
 .details-section {
-    padding: 10px;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 5px;
-    background-color: color-mix(in srgb, var(--g1-color) 75%, var(--g2-color) 25%);
-    /* border: 1px solid var(--g2-color); */
-    /* flex-wrap: wrap; */
+  padding: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  background-color: color-mix(in srgb, var(--g1-color) 75%, var(--g2-color) 25%);
+  /* border: 1px solid var(--g2-color); */
+  /* flex-wrap: wrap; */
 }
 
 .habit-tags {
