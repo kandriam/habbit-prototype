@@ -15,9 +15,3 @@ title: "ReadMe"
 - Habit page
     - Details
     - Calendar
-
-
-# Notes
-- Why ids in json are strings and not numbers?
-    - Angular/HTTP seems to be converting numbers to strings when handling JSON responses. I have spent hours trying to dodge this with conversions, it has not worked yet.
-    - I don't know why this isn't an issue with timesperinstance
