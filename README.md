@@ -15,3 +15,8 @@ title: "ReadMe"
 - Habit page
     - Details
     - Calendar
+
+
+# Uses
+- Typescript, CSS/HTML
+- JSon server database
