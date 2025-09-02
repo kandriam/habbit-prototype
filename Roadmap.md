@@ -8,7 +8,7 @@ title: "Roadmap"
 [x] Add habits
 [x] Delete habits (waiting on add habits)
 [x] Calendar and habit tracker (1 year)
-    [x] Make today distingc
+    [x] Make today distinct
 [x] Multiline descriptions
 [ ] Proggy/Track per day
     [x] Tracker with length of instancesperday
@@ -21,6 +21,7 @@ title: "Roadmap"
 
 
 [-] Every x days/weeks/months on x weekdays/dates
+[ ] Today's Tasks widget
 [ ] Calendar on home page
     [ ] Multiple habits on one main calendar
     [ ] select which habits

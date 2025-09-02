@@ -17,10 +17,24 @@ import { HabitService } from '../habit.service';
         </div>
       </div>
       <div class="thumbnail-section">
+        <p>
         @if (habit().timesperinstance === 1) {
-          <p> {{ habit().timesperinstance }} time per day </p>
+          {{ habit().timesperinstance }}
         } @else {
-          <p> {{ habit().timesperinstance }} times per day </p>
+          {{ habit().timesperinstance }}
+        }
+        times {{ habit().frequency }} </p>
+                  <label class="progress-text" id="progress-numerator">{{habit().timesdone}}/{{habit().timesperinstance}} </label>
+
+      </div>
+      <div class="habit-section">
+        @if (habit().timesperinstance != 1) {
+          <div class="details-row">
+              <a class="secondary" (click)="changeTracker(-1)">-</a>
+              <input id="progress-tracker" type="range" min=0 max={{habit().timesperinstance}} value={{habit().timesdone}} class="slider" (input)="updateTracker()">
+              <a class="secondary" (click)="changeTracker(1)">+</a>
+            <a class="secondary" type="button" (click)="resetProgress()">Reset</a>
+          </div>
         }
       </div>
       <div class="tag-section">
@@ -56,6 +70,37 @@ export class Habit {
     console.log(`Deleting habit from home: ${id}`)
     this.habitService.deleteHabit(id);
     window.location.reload();
+  }
+  // Sets progress tracker slider back to 0
+  resetProgress() {
+    var slider = <HTMLInputElement> document.getElementById("progress-tracker");
+    slider.value = "0";
+    this.updateTracker();        
+  }
+
+  // Takes in num of type number
+  // Incraments (or decraments) tracker by said amount
+  changeTracker(num: number){
+    var slider = <HTMLInputElement> document.getElementById("progress-tracker");
+    slider.value = (Number(slider.value) + Number(num)).toString();
+    this.updateTracker();
+  }
+  
+  // Updates progress tracker's label to the appropriate amount completed
+  // and updates database with approprate amount completed
+  updateTracker() {
+    var slider = <HTMLInputElement> document.getElementById("progress-tracker");
+    var str: string = slider.value + "/" + this.habit().timesperinstance;
+    (document.getElementById("progress-numerator") as HTMLImageElement).textContent = (str);
+    this.habitService.updateProgress(
+      this.habit().id,
+      this.habit().name ?? '',
+      Number(slider.value),
+      this.habit().timesperinstance ?? 1,
+      this.habit().frequency ??'daily',
+      this.habit().description ?? [],
+      this.habit().tags ?? [],
+      this.habit().calendar ?? []);
   }
 }
 
