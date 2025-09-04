@@ -3,7 +3,7 @@
     {
       "id": "1",
       "name": "Brush teeth",
-      "timesdone": 3,
+      "timesdone": 2,
       "timesperinstance": 3,
       "frequency": "daily",
       "description": [
@@ -46,8 +46,7 @@
         "August302025",
         "September12025",
         "September22025",
-        "September32025",
-        "September42025"
+        "September32025"
       ]
     },
     {
@@ -98,7 +97,8 @@
         "August82025",
         "August92025",
         "August102025",
-        "August32025"
+        "August32025",
+        "September42025"
       ]
     },
     {
@@ -133,12 +133,42 @@
       "tags": [
         "Creativity"
       ],
-      "calendar": []
+      "calendar": [
+        "September42025",
+        "September32025",
+        "September22025",
+        "September12025",
+        "August312025",
+        "August302025",
+        "August292025",
+        "August282025",
+        "August272025",
+        "August262025",
+        "August252025",
+        "August242025",
+        "August142025",
+        "August152025",
+        "August162025",
+        "August172025",
+        "August192025",
+        "August182025",
+        "August202025",
+        "August222025",
+        "August212025",
+        "August232025",
+        "August132025",
+        "August122025",
+        "August112025",
+        "August102025",
+        "August92025",
+        "August82025",
+        "August72025"
+      ]
     },
     {
       "id": "7",
       "name": "Test Habit",
-      "timesdone": 1,
+      "timesdone": 2,
       "timesperinstance": 4,
       "frequency": "daily",
       "description": [

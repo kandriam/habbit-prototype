@@ -28,18 +28,18 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: xx-large;
-    color: var(--o4-color);
+  font-size: xx-large;
+  color: var(--o4-color);
 }
 
 h2 {
-    font-size: x-large;
-    color: var(--o4-color);
+  font-size: x-large;
+  color: var(--o4-color);
 }
 
 h3 {
-  font-size: large;
-    color: var(--o4-color);
+  font-size: medium;
+  color: var(--o4-color);
 }
 
 a {

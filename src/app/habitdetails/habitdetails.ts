@@ -16,7 +16,7 @@ import { Calendar } from '../calendar/habitcalendar';
         <a class="primary" [routerLink]="['/']">Back</a>
       </div>
     </div>
-    <article>
+    <article class="details-article">
       <div class="details-row">
         <div id="content-container" class="secondary-container"  style="width: 100%">
           <div class="details-section">

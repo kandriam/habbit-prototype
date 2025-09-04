@@ -13,7 +13,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
       <div class="horizontal-div">
       <form [formGroup]="applyForm" (submit)="createHabit()">
         <div class="primary-container">
-          <h3>Add New Habit</h3>
+          <h2>Add New Habit</h2>
           <div>              
             <label for="habit-name">Habit Name:</label>
             <input type="text" name="habit-name" placeholder="Habit name" formControlName="name" autocomplete="off" required>

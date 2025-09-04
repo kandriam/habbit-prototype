@@ -77,7 +77,6 @@ export class Habit {
 
 
   toggleToday() {
-    console.log("Toggling");
     event?.stopPropagation();
     let habitdates = this.habit().calendar ?? [];
     console.log(this.strdate);
@@ -106,6 +105,7 @@ export class Habit {
   }
   // Sets progress tracker slider back to 0
   resetProgress(id: number) {
+    event?.stopPropagation();
     var slider = <HTMLInputElement> document.getElementById("progress-tracker-" + id);
     slider.value = "0";
     this.updateTracker(id); 
@@ -123,6 +123,7 @@ export class Habit {
   // Updates progress tracker's label to the appropriate amount completed
   // and updates database with approprate amount completed
   updateTracker(id: number) {
+    event?.stopPropagation();
     var slider = <HTMLInputElement> document.getElementById("progress-tracker-" + id);
     var str: string = slider.value + "/" + this.habit().timesperinstance;
     (document.getElementById("progress-numerator-" + id) as HTMLImageElement).textContent = (str);
