@@ -24,16 +24,18 @@ import { HabitService } from '../habit.service';
           {{ habit().timesperinstance }}
         }
         times {{ habit().frequency }} </p>
-                  <label class="progress-text" id="progress-numerator">{{habit().timesdone}}/{{habit().timesperinstance}} </label>
+        <label class="progress-text" id="progress-numerator-{{habit().id}}">
+          {{habit().timesdone}}/{{habit().timesperinstance}}
+        </label>
 
       </div>
       <div class="habit-section">
         @if (habit().timesperinstance != 1) {
           <div class="details-row">
-              <a class="secondary" (click)="changeTracker(-1)">-</a>
-              <input id="progress-tracker" type="range" min=0 max={{habit().timesperinstance}} value={{habit().timesdone}} class="slider" (input)="updateTracker()">
-              <a class="secondary" (click)="changeTracker(1)">+</a>
-            <a class="secondary" type="button" (click)="resetProgress()">Reset</a>
+              <a class="secondary" (click)="changeTracker(habit().id, -1)">-</a>
+              <input id="progress-tracker-{{habit().id}}" type="range" min=0 max={{habit().timesperinstance}} value={{habit().timesdone}} class="slider" (input)="updateTracker(habit().id)">
+              <a class="secondary" (click)="changeTracker(habit().id, 1)">+</a>
+            <a class="secondary" type="button" (click)="resetProgress(habit().id)">Reset</a>
           </div>
         }
       </div>
@@ -72,26 +74,27 @@ export class Habit {
     window.location.reload();
   }
   // Sets progress tracker slider back to 0
-  resetProgress() {
-    var slider = <HTMLInputElement> document.getElementById("progress-tracker");
+  resetProgress(id: number) {
+    var slider = <HTMLInputElement> document.getElementById("progress-tracker-" + id);
     slider.value = "0";
-    this.updateTracker();        
+    this.updateTracker(id);        
   }
 
   // Takes in num of type number
   // Incraments (or decraments) tracker by said amount
-  changeTracker(num: number){
-    var slider = <HTMLInputElement> document.getElementById("progress-tracker");
+  changeTracker(id: number, num: number){
+    event?.stopPropagation(); // I know event is deprecated, but I don't know an alternative
+    var slider = <HTMLInputElement> document.getElementById("progress-tracker-" + id);
     slider.value = (Number(slider.value) + Number(num)).toString();
-    this.updateTracker();
+    this.updateTracker(id);
   }
   
   // Updates progress tracker's label to the appropriate amount completed
   // and updates database with approprate amount completed
-  updateTracker() {
-    var slider = <HTMLInputElement> document.getElementById("progress-tracker");
+  updateTracker(id: number) {
+    var slider = <HTMLInputElement> document.getElementById("progress-tracker-" + id);
     var str: string = slider.value + "/" + this.habit().timesperinstance;
-    (document.getElementById("progress-numerator") as HTMLImageElement).textContent = (str);
+    (document.getElementById("progress-numerator-" + id) as HTMLImageElement).textContent = (str);
     this.habitService.updateProgress(
       this.habit().id,
       this.habit().name ?? '',

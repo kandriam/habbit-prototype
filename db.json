@@ -100,7 +100,7 @@
     {
       "id": "4",
       "name": "Gym",
-      "timesdone": 5,
+      "timesdone": 3,
       "timesperinstance": 5,
       "frequency": "weekly",
       "description": [
@@ -134,7 +134,7 @@
     {
       "id": "7",
       "name": "Test Habit",
-      "timesdone": 0,
+      "timesdone": 1,
       "timesperinstance": 4,
       "frequency": "daily",
       "description": [
