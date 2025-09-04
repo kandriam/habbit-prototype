@@ -97,6 +97,31 @@ a {
     box-shadow: 0px 5px 5px var(--g4-color);
 }
 
+.tertiary {
+  border: solid 1px var(--g5-color);
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: x-small;
+  padding: 1px;
+  margin-inline: 5px;
+
+  color: var(--o5-color);
+  
+  background-color: var(--g2-color);
+
+  transition: background-color 0.5s;
+  transition: box-shadow 0.5s;
+}
+
+.tertiary:hover {
+    box-shadow: 0px 5px 5px var(--g4-color);
+}
+
+.tertiary:active {
+    background-color: var(--g3-color);
+    box-shadow: 0px 5px 5px var(--g4-color);
+}
+
 .listbutton {
   display: block;
   border: solid 1px var(--g5-color);
@@ -143,7 +168,7 @@ input[type="number"] {
 
 input[type="range"] {
   appearance: none;
-  /* width: 90%; */
+  width: 100%;
   accent-color: var(--o4-color);
   background-color: color-mix(in srgb, var(--g1-color) 50%, white 50%);
   height: 15px;

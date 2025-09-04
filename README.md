@@ -17,6 +17,6 @@ title: "ReadMe"
     - Calendar
 
 
-# Uses
+# Tech Stack
 - Typescript, CSS/HTML
 - JSon server database
